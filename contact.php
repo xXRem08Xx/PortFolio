@@ -3,7 +3,7 @@
 
 <?php
 $title = "Contact";
-include "head.php";
+include "header.php";
 ?>
 
 <body>

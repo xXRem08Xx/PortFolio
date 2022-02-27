@@ -3,7 +3,7 @@
 
 <?php
 $title = "A Propos de nous";
-include "head.php";
+include "header.php";
 ?>
 
 <body>

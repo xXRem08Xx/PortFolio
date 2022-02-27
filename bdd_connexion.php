@@ -1,4 +1,5 @@
 <?php
+/*
       //Connexion à la base de données
       $nomBase = "rmaissa_portfolio";
       $serveur = "172.28.100.3";
@@ -13,3 +14,5 @@
         die('Erreur : '.mysqli_connect_error());
       }
       echo 'connexion reussi';
+*/
+?>

@@ -3,7 +3,7 @@
 
 <?php
 $title = "PortFolio";
-include "head.php";
+include "header.php";
 ?>
 
 <body>

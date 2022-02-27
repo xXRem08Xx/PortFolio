@@ -3,7 +3,7 @@
 
 <?php
 $title = "Blog";
-include "head.php";
+include "header.php";
 ?>
 
 <body>
