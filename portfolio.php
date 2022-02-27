@@ -68,6 +68,9 @@ include "head.php";
           <label class="btn btn-sm btn-primary active">
             <input type="radio" name="shuffle-filter" value="all" checked="checked" />All
           </label>
+          <?php
+            /* Les Champs valeurs si dessous correspondent aux mot clé qui seront affiché quand on cliquera dessus dans le menu de la page */
+          ?>
           <label class="btn btn-sm btn-primary">
             <input type="radio" name="shuffle-filter" value="design" />C++
           </label>
@@ -81,6 +84,10 @@ include "head.php";
       </div>
     </div>
     <div class="row shuffle-wrapper">
+    <?php
+            /* Les Champs data-groups si dessous correspondent aux mots clés des cards affiché, et permettront d'afficher 
+            seulement ceux qui comporte le mot qui à été choisi dans le filte */
+          ?>
       <div class="col-lg-4 col-6 mb-4 shuffle-item" data-groups="[&quot;design&quot;,&quot;illustration&quot;]">
         <div class="position-relative rounded hover-wrapper">
           <img src="images/portfolio/item-1.png" alt="portfolio-image" class="img-fluid rounded w-100 d-block">
