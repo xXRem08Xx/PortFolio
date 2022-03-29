@@ -3,7 +3,8 @@
 
 <?php
 $title = "PortFolio";
-include "header.php";
+include_once "./header.php";
+include_once "./function.php";
 ?>
 
 <body>
@@ -88,6 +89,7 @@ include "header.php";
             /* Les Champs data-groups si dessous correspondent aux mots clés des cards affiché, et permettront d'afficher 
             seulement ceux qui comporte le mot qui à été choisi dans le filte */
           ?>
+          <?php /*
       <div class="col-lg-4 col-6 mb-4 shuffle-item" data-groups="[&quot;design&quot;,&quot;illustration&quot;]">
         <div class="position-relative rounded hover-wrapper">
           <img src="images/portfolio/item-1.png" alt="portfolio-image" class="img-fluid rounded w-100 d-block">
@@ -98,16 +100,16 @@ include "header.php";
           </div>
         </div>
       </div>
-      <div class="col-lg-4 col-6 mb-4 shuffle-item" data-groups="[&quot;branding&quot;]">
-        <div class="position-relative rounded hover-wrapper">
-          <img src="images/portfolio/item-2.png" alt="portfolio-image" class="img-fluid rounded w-100 d-block">
-          <div class="hover-overlay">
-            <div class="hover-content">
-              <a class="btn btn-light btn-sm" href="#!">view project</a>
-            </div>
-          </div>
-        </div>
-      </div>
+      */ ?>
+
+      <?php 
+      
+      generationCardPortfolio();
+
+      ?>
+
+
+      <?php /*
       <div class="col-lg-4 col-6 mb-4 shuffle-item" data-groups="[&quot;illustration&quot;]">
         <div class="position-relative rounded hover-wrapper">
           <img src="images/portfolio/item-3.png" alt="portfolio-image" class="img-fluid rounded w-100 d-block">
@@ -178,6 +180,7 @@ include "header.php";
           </div>
         </div>
       </div>
+      */ ?>
     </div>
   </div>
 </section>

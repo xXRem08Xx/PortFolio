@@ -1,18 +1,11 @@
 <?php
-/*
-      //Connexion à la base de données
-      $nomBase = "rmaissa_portfolio";
-      $serveur = "172.28.100.3";
-      $utilisateur = "rmaissa";
-      $mdp = "elini01";
-
-      $bdd = mysqli_connect($serveur, $utilisateur, $mdp, $nomBase);
-      
-      //on verifie si la connexion est effectué
-      if(!$bdd)
-      {
-        die('Erreur : '.mysqli_connect_error());
-      }
-      echo 'connexion reussi';
-*/
-?>
+try {
+  $user = "rmaissa";
+  $mdp = "elini01";
+  $pdo = new PDO('mysql:host=localhost;dbname=rmaissa_portfolio;charset=utf8', $user, $mdp);
+}
+catch (Exception $e) {
+    
+      print 'Erreur fatale : ' . $e->getMessage() . "<br/>";
+      die();
+}

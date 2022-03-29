@@ -104,6 +104,16 @@ include "header.php";
   </section>
   <!-- /about -->
 
+  <section class="section">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 text-center">
+        <iframe src="https://docs.google.com/document/d/e/2PACX-1vQOl4X8GPZ6W7aLWxVtC_BQMoJZXp6bhXRa65WKGjCYBd1f40M10ruqCVDDaBKgrNtRhCTcWlxwSWvy/pub?embedded=true"></iframe>
+        </div>
+      </div>
+      </div>
+  </section>
+
   <!-- skills -->
   <section class="section">
     <div class="container">
@@ -216,8 +226,8 @@ include "header.php";
             </div>
           </div>
         </div>
-        </div>
       </div>
+    </div>
     </div>
     <!-- bg image -->
     <img class="img-fluid edu-bg-image w-100" src="images/backgrounds/education-bg.png" alt="bg-image">
