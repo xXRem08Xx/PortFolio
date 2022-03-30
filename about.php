@@ -2,7 +2,7 @@
 <html lang="fr">
 
 <?php
-$title = "A Propos de nous";
+$title = "A Propos de moi";
 include_once "header.php";
 ?>
 
@@ -17,7 +17,7 @@ include_once "header.php";
   <div class="container">
     <div class="row">
       <div class="col-12">
-        <h1 class="text-white font-tertiary">About Me</h1>
+        <h1 class="text-white font-tertiary">A Propos de Moi</h1>
       </div>
     </div>
   </div>
@@ -49,8 +49,9 @@ include_once "header.php";
         <div class="shadow-down mb-4">
           <img src="images/about/author.jpg" alt="author" class="img-fluid w-100 rounded-lg border-thick border-white">
         </div>
-        <img src="images/about/signature.png" alt="signature" class="img-fluid">
-        <h4>Johnathan Smith</h4>
+        <!-- lien d'image si on veux rajouter la signature 
+        <img src="images/about/signature.png" alt="signature" class="img-fluid">  -->
+        <h4>Rémi Maïssa</h4>
       </div>
     </div>
   </div>
@@ -58,6 +59,7 @@ include_once "header.php";
 <!-- /about -->
 
 <!-- Work Process -->
+<!--
 <section class="section">
   <div class="container">
     <div class="row justify-content-around">
@@ -86,10 +88,12 @@ include_once "header.php";
       </div>
     </div>
   </div>
-</section>
+</section> 
+-->
 <!-- ./Work Process -->
 
 <!-- team -->
+<!--
 <section class="section bg-cover" data-background="images/backgrounds/team-bg.png">
   <div class="container">
     <div class="row">
@@ -126,9 +130,11 @@ include_once "header.php";
     </div>
   </div>
 </section>
+-->
 <!-- /team -->
 
 <!-- clients -->
+<!--
 <section class="section">
   <div class="container">
     <div class="row">
@@ -164,80 +170,11 @@ include_once "header.php";
     </div>
   </div>
 </section>
+-->
 <!-- /clients -->
 
-<!-- contact -->
-<section class="section section-on-footer" data-background="images/backgrounds/bg-dots.png">
-  <div class="container">
-    <div class="row">
-      <div class="col-12 text-center">
-        <h2 class="section-title">Contact Info</h2>
-      </div>
-      <div class="col-lg-8 mx-auto">
-        <div class="bg-white rounded text-center p-5 shadow-down">
-          <h4 class="mb-80">Contact Form</h4>
-          <form action="#" class="row">
-            <div class="col-md-6">
-              <input type="text" id="name" name="name" placeholder="Full Name" class="form-control px-0 mb-4" required>
-            </div>
-            <div class="col-md-6">
-              <input type="email" id="email" name="email" placeholder="Email Address" class="form-control px-0 mb-4" required>
-            </div>
-            <div class="col-12">
-              <textarea name="message" id="message" class="form-control px-0 mb-4"
-                placeholder="Type Message Here" required></textarea>
-            </div>
-            <div class="col-lg-6 col-10 mx-auto">
-              <button class="btn btn-primary w-100">send</button>
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- /contact -->
-
-<!-- footer -->
-<footer class="bg-dark footer-section">
-  <div class="section">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-4">
-          <h5 class="text-light">Email</h5>
-          <p class="text-white paragraph-lg font-secondary">steve.fruits@email.com</p>
-        </div>
-        <div class="col-md-4">
-          <h5 class="text-light">Phone</h5>
-          <p class="text-white paragraph-lg font-secondary">+880 2544 658 256</p>
-        </div>
-        <div class="col-md-4">
-          <h5 class="text-light">Address</h5>
-          <p class="text-white paragraph-lg font-secondary">125/A, CA Commercial Area, California, USA</p>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="border-top text-center border-dark py-5">
-    <p class="mb-0 text-light">Copyright &copy;<script>
-        var CurrentYear = new Date().getFullYear()
-        document.write(CurrentYear)
-      </script> Designed &amp; Developed by <a class="text-white-50" href="Themefisher">Themefisher</a></p>
-  </div>
-</footer>
-<!-- /footer -->
-
-<!-- jQuery -->
-<script src="plugins/jQuery/jquery.min.js"></script>
-<!-- Bootstrap JS -->
-<script src="plugins/bootstrap/bootstrap.min.js"></script>
-<!-- slick slider -->
-<script src="plugins/slick/slick.min.js"></script>
-<!-- filter -->
-<script src="plugins/shuffle/shuffle.min.js"></script>
-
-<!-- Main Script -->
-<script src="js/script.js"></script>
-
+<?php 
+require_once "footer.php";
+?>
 </body>
 </html>

@@ -8,7 +8,7 @@ include_once "header.php";
 
 <body>
 
-
+<!-- nav bar index != nav-bar.php -->
   <header class="navigation fixed-top">
     <nav class="navbar navbar-expand-lg navbar-dark">
       <a class="navbar-brand font-tertiary h3" href="index.php"><img src="images/logo.png" alt="Myself"></a>
@@ -34,6 +34,7 @@ include_once "header.php";
       </div>
     </nav>
   </header>
+  <!-- /nav bar -->
 
   <!-- header page entiere -->
   <section class="hero-area bg-primary" id="parallax">
@@ -100,7 +101,8 @@ include_once "header.php";
     </div>
   </section>
   <!-- /about -->
-  <!-- skills -->
+
+  <!-- Competences -->
   <section class="section">
     <div class="container">
       <div class="row">
@@ -110,10 +112,10 @@ include_once "header.php";
         <div class="col-lg-3 col-sm-6 mb-4 mb-lg-0">
           <div class="card shadow text-center">
             <div class="position-relative rounded-top progress-wrapper" data-color="#fdb157">
-              <div class="wave" data-progress="70%"></div>
+              <div class="wave" data-progress="60%"></div>
             </div>
             <div class="card-footer bg-white">
-              <h4 class="card-title">Conception Web (70%)</h4>
+              <h4 class="card-title">Conception Web (60%)</h4>
             </div>
           </div>
         </div>
@@ -140,16 +142,16 @@ include_once "header.php";
         <div class="col-lg-3 col-sm-6 mb-4 mb-lg-0">
           <div class="card shadow text-center">
             <div class="position-relative rounded-top progress-wrapper" data-color="#ffbcaa">
-              <div class="wave" data-progress="15%"></div>
+              <div class="wave" data-progress="35%"></div>
             </div>
             <div class="card-footer bg-white">
-              <h4 class="card-title">Dévellopement JavaScript (15%)</h4>
+              <h4 class="card-title">Dévellopement JavaScript (35%)</h4>
             </div>
           </div>
         </div>
       </div>
   </section>
-  <!-- /skills -->
+  <!-- /Competences -->
 
   <!-- experience -->
   <section class="section">
@@ -186,7 +188,7 @@ include_once "header.php";
     <div class="container">
       <div class="row">
         <div class="col-lg-12 text-center">
-          <h2 class="section-title">Education</h2>
+          <h2 class="section-title">Parcourt</h2>
         </div>
         <div class="col-lg-6 col-md-6 mb-80">
           <div class="d-flex">
@@ -323,83 +325,6 @@ include_once "header.php";
   </section>
   <!-- /projet -->
 
-  <!-- testimonial -->
-  <section class="section bg-primary position-relative testimonial-bg-shapes">
-    <div class="container">
-      <div class="row">
-        <div class="col-12 text-center">
-          <h2 class="section-title text-white mb-5">Testimonials</h2>
-        </div>
-        <div class="col-lg-10 mx-auto testimonial-slider">
-          <!-- slider-item -->
-          <div class="text-center testimonial-content">
-            <i class="ti-quote-right text-white icon mb-4 d-inline-block"></i>
-            <p class="text-white mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-              incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, <strong>quis nostrud exercitation
-                ullamco laboris nisi ut aliquip ex ea commodo consequat.</strong> Duis aute irure dolor in reprehenderit
-              in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-            <img class="img-fluid rounded-circle mb-4 d-inline-block" src="images/testimonial/client-1.png" alt="client-image">
-            <h4 class="text-white">Jesica Gomez</h4>
-            <h6 class="text-light mb-4">CEO, Funder</h6>
-          </div>
-          <!-- slider-item -->
-          <div class="text-center testimonial-content">
-            <i class="ti-quote-right text-white icon mb-4 d-inline-block"></i>
-            <p class="text-white mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-              incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, <strong>quis nostrud exercitation
-                ullamco
-                laboris nisi ut aliquip ex ea commodo consequat.</strong> Duis aute irure dolor in reprehenderit in
-              voluptate velit
-              esse cillum dolore eu fugiat nulla pariatur.</p>
-            <img class="img-fluid rounded-circle mb-4 d-inline-block" src="images/testimonial/client-1.png" alt="client-image">
-            <h4 class="text-white">Jesica Gomez</h4>
-            <h6 class="text-light mb-4">CEO, Funder</h6>
-          </div>
-          <!-- slider-item -->
-          <div class="text-center testimonial-content">
-            <i class="ti-quote-right text-white icon mb-4 d-inline-block"></i>
-            <p class="text-white mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-              incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, <strong>quis nostrud exercitation
-                ullamco
-                laboris nisi ut aliquip ex ea commodo consequat.</strong> Duis aute irure dolor in reprehenderit in
-              voluptate velit
-              esse cillum dolore eu fugiat nulla pariatur.</p>
-            <img class="img-fluid rounded-circle mb-4 d-inline-block" src="images/testimonial/client-1.png" alt="client-image">
-            <h4 class="text-white">Jesica Gomez</h4>
-            <h6 class="text-light mb-4">CEO, Funder</h6>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- bg shapes -->
-    <img src="images/backgrounds/map.png" alt="map" class="img-fluid bg-map">
-    <img src="images/illustrations/dots-group-v.png" alt="bg-shape" class="img-fluid bg-shape-1">
-    <img src="images/illustrations/leaf-orange.png" alt="bg-shape" class="img-fluid bg-shape-2">
-    <img src="images/illustrations/dots-group-sm.png" alt="bg-shape" class="img-fluid bg-shape-3">
-    <img src="images/illustrations/leaf-pink-round.png" alt="bg-shape" class="img-fluid bg-shape-4">
-    <img src="images/illustrations/leaf-cyan.png" alt="bg-shape" class="img-fluid bg-shape-5">
-  </section>
-  <!-- /testimonial -->
-
-  <!-- client logo slider -->
-  <section class="section pb-0">
-    <div class="container">
-      <div class="client-logo-slider d-flex align-items-center">
-        <a href="contact.php" class="text-center d-block outline-0 p-4"><img class="d-unset img-fluid" src="images/clients-logo/client-logo-1.png" alt="client-logo"></a>
-        <a href="contact.php" class="text-center d-block outline-0 p-4"><img class="d-unset img-fluid" src="images/clients-logo/client-logo-2.png" alt="client-logo"></a>
-        <a href="contact.php" class="text-center d-block outline-0 p-4"><img class="d-unset img-fluid" src="images/clients-logo/client-logo-3.png" alt="client-logo"></a>
-        <a href="contact.php" class="text-center d-block outline-0 p-4"><img class="d-unset img-fluid" src="images/clients-logo/client-logo-4.png" alt="client-logo"></a>
-        <a href="contact.php" class="text-center d-block outline-0 p-4"><img class="d-unset img-fluid" src="images/clients-logo/client-logo-5.png" alt="client-logo"></a>
-        <a href="contact.php" class="text-center d-block outline-0 p-4"><img class="d-unset img-fluid" src="images/clients-logo/client-logo-1.png" alt="client-logo"></a>
-        <a href="contact.php" class="text-center d-block outline-0 p-4"><img class="d-unset img-fluid" src="images/clients-logo/client-logo-2.png" alt="client-logo"></a>
-        <a href="contact.php" class="text-center d-block outline-0 p-4"><img class="d-unset img-fluid" src="images/clients-logo/client-logo-3.png" alt="client-logo"></a>
-        <a href="contact.php" class="text-center d-block outline-0 p-4"><img class="d-unset img-fluid" src="images/clients-logo/client-logo-4.png" alt="client-logo"></a>
-        <a href="contact.php" class="text-center d-block outline-0 p-4"><img class="d-unset img-fluid" src="images/clients-logo/client-logo-5.png" alt="client-logo"></a>
-      </div>
-    </div>
-  </section>
-  <!-- /client logo slider -->
-
   <!-- blog -->
   <section class="section">
     <div class="container">
@@ -451,78 +376,9 @@ include_once "header.php";
   </section>
   <!-- /blog -->
 
-  <!-- contact -->
-  <section class="section section-on-footer" data-background="images/backgrounds/bg-dots.png">
-    <div class="container">
-      <div class="row">
-        <div class="col-12 text-center">
-          <h2 class="section-title">Contact Info</h2>
-        </div>
-        <div class="col-lg-8 mx-auto">
-          <div class="bg-white rounded text-center p-5 shadow-down">
-            <h4 class="mb-80">Contact Form</h4>
-            <form action="#" class="row">
-              <div class="col-md-6">
-                <input type="text" id="name" name="name" placeholder="Full Name" class="form-control px-0 mb-4" required>
-              </div>
-              <div class="col-md-6">
-                <input type="email" id="email" name="email" placeholder="Email Address" class="form-control px-0 mb-4" required>
-              </div>
-              <div class="col-12">
-                <textarea name="message" id="message" class="form-control px-0 mb-4" placeholder="Type Message Here" required></textarea>
-              </div>
-              <div class="col-lg-6 col-10 mx-auto">
-                <button class="btn btn-primary w-100">send</button>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- /contact -->
-
-  <!-- footer -->
-  <footer class="bg-dark footer-section">
-    <div class="section">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-4">
-            <h5 class="text-light">Email</h5>
-            <p class="text-white paragraph-lg font-secondary">steve.fruits@email.com</p>
-          </div>
-          <div class="col-md-4">
-            <h5 class="text-light">Phone</h5>
-            <p class="text-white paragraph-lg font-secondary">+880 2544 658 256</p>
-          </div>
-          <div class="col-md-4">
-            <h5 class="text-light">Address</h5>
-            <p class="text-white paragraph-lg font-secondary">125/A, CA Commercial Area, California, USA</p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="border-top text-center border-dark py-5">
-      <p class="mb-0 text-light">Copyright &copy;<script>
-          var CurrentYear = new Date().getFullYear()
-          document.write(CurrentYear)
-        </script> Designed &amp; Developed by <a class="text-white-50" href="Themefisher">Themefisher</a></p>
-    </div>
-  </footer>
-  <!-- /footer -->
-
-  <!-- jQuery -->
-  <script src="plugins/jQuery/jquery.min.js"></script>
-  <!-- Bootstrap JS -->
-  <script src="plugins/bootstrap/bootstrap.min.js"></script>
-  <!-- slick slider -->
-  <script src="plugins/slick/slick.min.js"></script>
-  <!-- filter -->
-  <script src="plugins/shuffle/shuffle.min.js"></script>
-
-  <!-- Main Script -->
-  <script src="js/script.js"></script>
-
+  <?php
+  require_once "footer.php";
+  ?>
   <!-- ionicons -->
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
