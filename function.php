@@ -1,7 +1,7 @@
 <?php
 include_once "./bdd_connexion.php";
 
-function generationCardPortfolio()
+function generationCardportfolio()
 {
     global $pdo;
 
@@ -13,9 +13,7 @@ function generationCardPortfolio()
     foreach ($requete as $doc) {
 
         //pour chaque doc on recupere ses mots clé associés
-        $requeteSqlMotCle = "SELECT motcle.libelle as libelle, COUNT(*) FROM motcle LEFT OUTER JOIN appartient ON appartient.numeroMotCle = motcle.numeroMotCle WHERE appartient.numeroDocument = " + $doc['numeroDocument'] + "  GROUP BY libelle;";
-
-        echo $requeteSqlMotCle;
+        $requeteSqlMotCle = "SELECT motcle.libelle as libelle FROM motcle LEFT OUTER JOIN appartient ON appartient.numeroMotCle = motcle.numeroMotCle WHERE appartient.numeroDocument = " . $doc['numeroDocument'] . "  GROUP BY libelle;";
 
         $requeteMotCle = $pdo->query($requeteSqlMotCle);
 
@@ -27,32 +25,36 @@ function generationCardPortfolio()
 
         $listMot = '[';
         foreach ($requeteMotCle as $motCle) {
-            $listMot += '&quot;' . $motCle["libelle"] . '&quot;';
+            $listMot = $listMot . '&quot;' . $motCle["libelle"] . '&quot;';
 
             if($numCle < $nombreCleAPrevoir) {
-                $listMot += ',';
+                $listMot = $listMot . ',';
             }
             //&quot;branding&quot;]>'; 
 
-            $numCle++;
+            $numCle += 1;
         };
-        $listMot += ']>';
-        /*
-?>
-        <!-- <div class="col-lg-4 col-6 mb-4 shuffle-item" data-groups="[&quot;design&quot;,&quot;illustration&quot;]"> -->
+        $listMot = $listMot . ']">';
+        $divMotCle =  $divMotCle . $listMot;
 
+        //on prend un nombre aleatoire entre 1 et 8
+        $numImage = rand(1, 8);
+
+        $divCard = $divMotCle . '
         <div class="position-relative rounded hover-wrapper">
-            <img src="images/portfolio/item-2.png" alt="portfolio-image" class="img-fluid rounded w-100 d-block">
-            <div class="hover-overlay">
-                <div class="hover-content">
-                    <a class="btn btn-light btn-sm" href="#!">view project</a>
-                </div>
+          <img src="images/projet/item-' . $numImage . '.png" alt="portfolio-image" class="img-fluid rounded w-100 d-block">
+          <div class="hover-overlay">
+            <div class="hover-content">
+              <h4> ' . $doc["titreProjet"] . '</h4>
+              <a class="btn btn-light btn-sm" href="projet-details.php?='. $doc["numeroDocument"] .'" target=_blank >Voir le projet</a>
             </div>
+          </div>
         </div>
-        </div>
+      </div>
+';
+        //on affiche
+        echo $divCard;
 
-<?php
-        */
     };
 };
 ?>

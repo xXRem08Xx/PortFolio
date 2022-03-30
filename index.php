@@ -3,7 +3,7 @@
 
 <?php
 $title = "Accueil";
-include "header.php";
+include_once "header.php";
 ?>
 
 <body>
@@ -25,10 +25,7 @@ include "header.php";
             <a class="nav-link" href="about.php">about</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="blog.php">Blog</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="portfolio.php">Portfolio</a>
+            <a class="nav-link" href="portfolio.php">Projet</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="contact.php">Contact</a>
@@ -43,7 +40,7 @@ include "header.php";
     <div class="container">
       <div class="row">
         <div class="col-lg-11 mx-auto">
-          <h1 class="text-white font-tertiary">Salut ! je suis <br> Rémi <br> Dévellopeur</h1>
+          <h1 class="text-white font-tertiary">Salut ! je suis <br> Rémi <br> Développeur</h1>
         </div>
       </div>
     </div>
@@ -103,17 +100,6 @@ include "header.php";
     </div>
   </section>
   <!-- /about -->
-
-  <section class="section">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12 text-center">
-        <iframe src="https://docs.google.com/document/d/e/2PACX-1vQOl4X8GPZ6W7aLWxVtC_BQMoJZXp6bhXRa65WKGjCYBd1f40M10ruqCVDDaBKgrNtRhCTcWlxwSWvy/pub?embedded=true"></iframe>
-        </div>
-      </div>
-      </div>
-  </section>
-
   <!-- skills -->
   <section class="section">
     <div class="container">
@@ -278,13 +264,13 @@ include "header.php";
     <div class="container">
       <div class="row">
         <div class="col-12 text-center">
-          <h2 class="section-title">Portfolio</h2>
+          <h2 class="section-title">portfolio</h2>
         </div>
       </div>
       <div class="row shuffle-wrapper">
         <div class="col-lg-4 col-6 mb-4 shuffle-item">
           <div class="position-relative rounded hover-wrapper">
-            <img src="images/portfolio/item-1.png" alt="portfolio-image" class="img-fluid rounded w-100">
+            <img src="images/projet/item-1.png" alt="portfolio-image" class="img-fluid rounded w-100">
             <div class="hover-overlay">
               <div class="hover-content">
                 <a class="btn btn-light btn-sm" href="#!">view project</a>
@@ -294,7 +280,7 @@ include "header.php";
         </div>
         <div class="col-lg-4 col-6 mb-4 shuffle-item">
           <div class="position-relative rounded hover-wrapper">
-            <img src="images/portfolio/item-2.png" alt="portfolio-image" class="img-fluid rounded w-100">
+            <img src="images/projet/item-2.png" alt="portfolio-image" class="img-fluid rounded w-100">
             <div class="hover-overlay">
               <div class="hover-content">
                 <a class="btn btn-light btn-sm" href="#!">view project</a>
@@ -304,7 +290,7 @@ include "header.php";
         </div>
         <div class="col-lg-4 col-6 mb-4 shuffle-item">
           <div class="position-relative rounded hover-wrapper">
-            <img src="images/portfolio/item-3.png" alt="portfolio-image" class="img-fluid rounded w-100">
+            <img src="images/projet/item-3.png" alt="portfolio-image" class="img-fluid rounded w-100">
             <div class="hover-overlay">
               <div class="hover-content">
                 <a class="btn btn-light btn-sm" href="#!">view project</a>
@@ -314,7 +300,7 @@ include "header.php";
         </div>
         <div class="col-lg-4 col-6 mb-4 shuffle-item">
           <div class="position-relative rounded hover-wrapper">
-            <img src="images/portfolio/item-4.png" alt="portfolio-image" class="img-fluid rounded w-100">
+            <img src="images/projet/item-4.png" alt="portfolio-image" class="img-fluid rounded w-100">
             <div class="hover-overlay">
               <div class="hover-content">
                 <a class="btn btn-light btn-sm" href="#!">view project</a>
@@ -324,7 +310,7 @@ include "header.php";
         </div>
         <div class="col-lg-4 col-6 mb-4 shuffle-item">
           <div class="position-relative rounded hover-wrapper">
-            <img src="images/portfolio/item-5.png" alt="portfolio-image" class="img-fluid rounded w-100">
+            <img src="images/projet/item-5.png" alt="portfolio-image" class="img-fluid rounded w-100">
             <div class="hover-overlay">
               <div class="hover-content">
                 <a class="btn btn-light btn-sm" href="#!">view project</a>
@@ -335,7 +321,7 @@ include "header.php";
       </div>
     </div>
   </section>
-  <!-- /portfolio -->
+  <!-- /projet -->
 
   <!-- testimonial -->
   <section class="section bg-primary position-relative testimonial-bg-shapes">
