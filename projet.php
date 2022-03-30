@@ -70,7 +70,7 @@ include_once "./function.php";
             seulement ceux qui comporte le mot qui à été choisi dans le filte */
 
 
-          generationCardPortfolio();
+            generationCardProjet();
 
           /*
       <div class="col-lg-4 col-6 mb-4 shuffle-item" data-groups="[&quot;design&quot;,&quot;illustration&quot;]">

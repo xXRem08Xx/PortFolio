@@ -1,7 +1,7 @@
 <?php
 include_once "./bdd_connexion.php";
 
-function generationCardportfolio()
+function generationCardProjet()
 {
     global $pdo;
 

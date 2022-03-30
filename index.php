@@ -22,10 +22,10 @@ include_once "header.php";
             <a class="nav-link" href="index.php">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="about.php">about</a>
+            <a class="nav-link" href="about.php">A Propos</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="portfolio.php">Projet</a>
+            <a class="nav-link" href="projet.php">Projet</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="contact.php">Contact</a>
