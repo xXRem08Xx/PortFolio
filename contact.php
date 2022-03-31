@@ -37,24 +37,24 @@ include_once "header.php";
   <div class="container">
     <div class="row">
       <div class="col-12 text-center">
-        <h2 class="section-title">Contact Info</h2>
+        <h2 class="section-title">Contacte Moi !</h2>
       </div>
       <div class="col-lg-8 mx-auto">
         <div class="bg-white rounded text-center p-5 shadow-down">
-          <h4 class="mb-80">Contact Form</h4>
+          <h4 class="mb-80">Formulaire de Contact</h4>
           <form action="#" class="row">
             <div class="col-md-6">
-              <input type="text" id="name" name="name" placeholder="Full Name" class="form-control px-0 mb-4" required>
+              <input type="text" id="name" name="name" placeholder="Nom Prénom" class="form-control px-0 mb-4" required>
             </div>
             <div class="col-md-6">
-              <input type="email" id="email" name="email" placeholder="Email Address" class="form-control px-0 mb-4" required>
+              <input type="email" id="email" name="email" placeholder="Adresse Mail" class="form-control px-0 mb-4" required>
             </div>
             <div class="col-12">
               <textarea name="message" id="message" class="form-control px-0 mb-4"
-                placeholder="Type Message Here" required></textarea>
+                placeholder="Tape ton message ici !" required></textarea>
             </div>
             <div class="col-lg-6 col-10 mx-auto">
-              <button class="btn btn-primary w-100">send</button>
+              <button class="btn btn-primary w-100">Envoyer</button>
             </div>
           </form>
         </div>

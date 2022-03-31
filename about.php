@@ -36,14 +36,10 @@ include_once "header.php";
   <div class="container">
     <div class="row">
       <div class="col-md-8">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-          dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-          commodo consequat.</p>
-        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-          Excepteur sint occaecat cupidatat non proident.</p>
-        <p>Deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-          accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi
-          architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia.</p>
+        <p>Étudiant en BTS SIO 🤓, je me forme pour acquérir des compétences dans le domaine du Web design et de la programmation 
+          Logiciel 🖥️ afin de pouvoir entrer dans la vie active.</p>
+          <p>Passionné par l'intelligence artificiel 😍 et les jeux vidéo 🎮, je souhaite m'orienter dans un domaine permettant de regrouper et de pratiquer les 2 activités. 💪</p>
+          <p></p>
       </div>
       <div class="col-md-4 text-center drag-lg-top">
         <div class="shadow-down mb-4">

@@ -74,10 +74,10 @@ include_once "header.php";
     </div>
     <!-- icone de reseau social -->
     <ul class="list-unstyled ml-5 mt-3 position-relative zindex-1">
-      <li class="mb-3"><a class="text-white" href="https://themefisher.com/"><i class="ti-instagram"></i></a></li>
-      <li class="mb-3"><a class="text-white" href="https://themefisher.com/"><i class="ti-instagram"></i></a></li>
-      <li class="mb-3"><a class="text-white" href="https://themefisher.com/"><i class="ti-dribbble"></i></a></li>
-      <li class="mb-3"><a class="text-white" href="https://themefisher.com/"><i class="ti-twitter"></i></a></li>
+      <li class="mb-3"><a class="text-white" href="#"><i class="ti-facebook"></i></a></li>
+      <li class="mb-3"><a class="text-white" href="#"><i class="ti-instagram"></i></a></li>
+      <li class="mb-3"><a class="text-white" href="#"><i class="ti-dribbble"></i></a></li>
+      <li class="mb-3"><a class="text-white" href="#"><i class="ti-twitter"></i></a></li>
     </ul>
     <!-- /icone de reseau social -->
   </section>
