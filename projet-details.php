@@ -2,8 +2,23 @@
 <html lang="fr">
 
 <?php
+$idDocument = $_GET['idProjet'];
 $title = "portfolio-details";
 include "header.php";
+require_once "./bdd_connexion.php";
+
+$requete = "SELECT `numeroDocument`, `titreProjet`, `lien`, `dateInsertion`, `description`, `lien_publication` FROM `document` WHERE `numeroDocument` = " . $idDocument;
+$resultat = $pdo->query($requete);
+$resultat = $resultat->fetchAll();
+
+$lienIframe = $resultat[0]['lien_publication'];
+$titreDocument = $resultat[0]['titreProjet'];
+$description = $resultat[0]['description'];
+$date = $resultat[0]['dateInsertion'];
+
+if(isset($lienIframe) && isset($idDocument) && isset($titreDocument) && isset($description) && isset($date))
+{
+
 ?>
 
 <body>
@@ -18,7 +33,7 @@ include "header.php";
   <div class="container">
     <div class="row">
       <div class="col-12 text-center">
-        <h1 class="text-white font-tertiary">Blogs</h1>
+        <h1 class="text-white font-tertiary">Détail du Projet</h1>
       </div>
     </div>
   </div>
@@ -37,24 +52,23 @@ include "header.php";
   <div class="container">
     <div class="row">
       <div class="col-lg-12">
-        <h3 class="font-tertiary mb-3">What should be the proper purpose of UI and UX design?</h3>
-        <p class="font-secondary mb-5">Published on May 26, 2017 by <span class="text-primary">uixgeek</span
-            class="text-primary"> on <span>UX design</span></p>
+        <h3 class="font-tertiary mb-3"> <?php echo $titreDocument ?> </h3>
+        <p class="font-secondary mb-5">Publié le <?php echo $date ?> par<span class="text-primary"> Remi</span
+            class="text-primary"></p>
         <div class="content">
-          <img src="images/blog/post-1.jpg" alt="post-thumb" class="img-fluid rounded float-left mr-5 mb-4">
-          
+        <div class="row">
+          <div class="col-7" style="height: 50vh;"> <?php echo '<iframe src="'.$lienIframe.'" style="height: 100%; width: 100%"></iframe>'; ?> </div>
+          <div class="col-4">
             <!-- texte a inserer -->
-            <div class="d-flex align-items-start bg-light mb-3" style="height: 100px;">
-            <!-- premiere colonne avec le iframe -->
-              <div class="col">
-
-              </div>
-
-            <!-- premiere colonne avec le iframe -->
-              <div class="col">
-
-              </div>
+            <div class="d-flex align-items-start bg-light mb-3" style="height: 30vh; font-size: 20px; line-height: 30px;"> 
+            <br>
+              <?php echo $description; ?>
+            </br>
             </div>
+          </div>
+
+      </div>
+
 
         </div>
       </div>
@@ -206,3 +220,7 @@ require_once "footer.php";
 ?>
 </body>
 </html>
+<?php 
+//fin if isset
+}
+?>

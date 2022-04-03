@@ -66,11 +66,8 @@ include_once "./function.php";
     </div>
     <div class="row shuffle-wrapper">
     <?php
-            /* Les Champs data-groups si dessous correspondent aux mots clés des cards affiché, et permettront d'afficher 
-            seulement ceux qui comporte le mot qui à été choisi dans le filte */
-
-
-            generationCardProjet();
+      //fonction pour afficher la liste des projets
+      generationCardProjet();
 
       ?>
 

@@ -46,7 +46,7 @@ function generationCardProjet()
           <div class="hover-overlay">
             <div class="hover-content">
               <h4> ' . $doc["titreProjet"] . '</h4>
-              <a class="btn btn-light btn-sm" href="projet-details.php?='. $doc["numeroDocument"] .'" target=_blank >Voir le projet</a>
+              <a class="btn btn-light btn-sm" href="projet-details.php?idProjet='. $doc["numeroDocument"] .'" target=_blank >Voir le projet</a>
             </div>
           </div>
         </div>
