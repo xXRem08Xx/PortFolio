@@ -3,8 +3,8 @@
 
 <?php
 $title = "PortFolio";
-include_once "./header.php";
-include_once "./function.php";
+require_once "./header.php";
+require_once "./function.php";
 ?>
 
 <body>

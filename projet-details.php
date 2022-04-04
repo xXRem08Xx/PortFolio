@@ -1,129 +1,113 @@
 <!DOCTYPE html>
 <html lang="fr">
+  <?php
+  $title = "portfolio-details";
+if ( isset($_GET['idProjet']) && !empty($_GET['idProjet'])) {
+  $idDocument = $_GET['idProjet'];
+  include "header.php";
+  require_once "./bdd_connexion.php";
 
-<?php
-$idDocument = $_GET['idProjet'];
-$title = "portfolio-details";
-include "header.php";
-require_once "./bdd_connexion.php";
+  $requete = "SELECT `numeroDocument`, `titreProjet`, `lien`, `dateInsertion`, `description`, `lien_publication` FROM `document` WHERE `numeroDocument` = " . $idDocument;
+  $resultat = $pdo->query($requete);
+  $resultat = $resultat->fetchAll();
 
-$requete = "SELECT `numeroDocument`, `titreProjet`, `lien`, `dateInsertion`, `description`, `lien_publication` FROM `document` WHERE `numeroDocument` = " . $idDocument;
-$resultat = $pdo->query($requete);
-$resultat = $resultat->fetchAll();
+  $lienIframe = $resultat[0]['lien_publication'];
+  $titreDocument = $resultat[0]['titreProjet'];
+  $description = $resultat[0]['description'];
+  $date = $resultat[0]['dateInsertion'];
 
-$lienIframe = $resultat[0]['lien_publication'];
-$titreDocument = $resultat[0]['titreProjet'];
-$description = $resultat[0]['description'];
-$date = $resultat[0]['dateInsertion'];
-
-if(isset($lienIframe) && isset($idDocument) && isset($titreDocument) && isset($description) && isset($date))
-{
+  if (isset($lienIframe) && isset($idDocument) && isset($titreDocument) && isset($description) && isset($date)) {
 
 ?>
 
-<body>
-  
+    <body>
+      <?php
+      require_once "./nav-bar.php";
+      ?>
 
-<?php
-  require_once "./nav-bar.php";
-?>
-
-<!-- titre de la page -->
-<section class="page-title bg-primary position-relative">
-  <div class="container">
-    <div class="row">
-      <div class="col-12 text-center">
-        <h1 class="text-white font-tertiary">Détail du Projet</h1>
-      </div>
-    </div>
-  </div>
-  <!-- image d'arriere plan -->
-  <img src="images/illustrations/page-title.png" alt="illustrations" class="bg-shape-1 w-100">
-  <img src="images/illustrations/leaf-pink-round.png" alt="illustrations" class="bg-shape-2">
-  <img src="images/illustrations/dots-cyan.png" alt="illustrations" class="bg-shape-3">
-  <img src="images/illustrations/leaf-orange.png" alt="illustrations" class="bg-shape-4">
-  <img src="images/illustrations/leaf-yellow.png" alt="illustrations" class="bg-shape-5">
-  <img src="images/illustrations/dots-group-cyan.png" alt="illustrations" class="bg-shape-6">
-  <img src="images/illustrations/leaf-cyan-lg.png" alt="illustrations" class="bg-shape-7">
-</section>
-<!-- /titre de la page -->
-
-<section class="section">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-12">
-        <h3 class="font-tertiary mb-3"> <?php echo $titreDocument ?> </h3>
-        <p class="font-secondary mb-5">Publié le <?php echo $date ?> par<span class="text-primary"> Remi</span
-            class="text-primary"></p>
-        <div class="content">
-        <div class="row">
-          <div class="col-7" style="height: 50vh;"> <?php echo '<iframe src="'.$lienIframe.'" style="height: 100%; width: 100%"></iframe>'; ?> </div>
-          <div class="col-4">
-            <!-- texte a inserer -->
-            <div class="d-flex align-items-start bg-light mb-3" style="height: 30vh; font-size: 20px; line-height: 30px;"> 
-            <br>
-              <?php echo $description; ?>
-            </br>
+      <!-- titre de la page -->
+      <section class="page-title bg-primary position-relative">
+        <div class="container">
+          <div class="row">
+            <div class="col-12 text-center">
+              <h1 class="text-white font-tertiary">Détail du Projet</h1>
             </div>
           </div>
-
-      </div>
-
-
         </div>
-      </div>
-    </div>
-  </div>
-</section>
+        <!-- image d'arriere plan -->
+        <img src="images/illustrations/page-title.png" alt="illustrations" class="bg-shape-1 w-100">
+        <img src="images/illustrations/leaf-pink-round.png" alt="illustrations" class="bg-shape-2">
+        <img src="images/illustrations/dots-cyan.png" alt="illustrations" class="bg-shape-3">
+        <img src="images/illustrations/leaf-orange.png" alt="illustrations" class="bg-shape-4">
+        <img src="images/illustrations/leaf-yellow.png" alt="illustrations" class="bg-shape-5">
+        <img src="images/illustrations/dots-group-cyan.png" alt="illustrations" class="bg-shape-6">
+        <img src="images/illustrations/leaf-cyan-lg.png" alt="illustrations" class="bg-shape-7">
+      </section>
+      <!-- /titre de la page -->
 
-<section>
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-12">
-        <h4 class="font-weight-bold mb-3">Comments 03</h4>
-        <div class="bg-gray p-5 mb-4">
-          <div class="media border-bottom py-4">
-            <img src="images/user-1.jpg" class="img-fluid align-self-start rounded-circle mr-3" alt="">
-            <div class="media-body">
-              <h5 class="mt-0">Carole Marvin.</h5>
-              <p>15 january 2015 At 10:30 pm</p>
-              <p>Ne erat velit invidunt his. Eum in dicta veniam interesset, harum fuisset te nam ea cu lupta
-                definitionem.</p>
-              <a href="#!" class="btn btn-transparent btn-sm pl-0">Reply</a>
-              <div class="media my-5">
-                <img src="images/user-2.jpg" class="img-fluid align-self-start rounded-circle mr-3" alt="">
-                <div class="media-body">
-                  <h5 class="mt-0">Jaquan Rolfson.</h5>
-                  <p>15 january 2015 At 10:30 pm</p>
-                  <p>Ne erat velit invidunt his. Eum in dicta veniam interesset, harum fuisset te nam ea cu lupta
-                    definitionem.</p>
-                  <a href="#!" class="btn btn-transparent btn-sm pl-0">Reply</a>
+      <!-- projet -->
+      <section class="section">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-12">
+              <h3 class="font-tertiary mb-3"> <?php echo $titreDocument ?> </h3>
+              <p class="font-secondary mb-5">Publié le <?php echo $date ?> par<span class="text-primary"> Remi</span class="text-primary"></p>
+              <div class="content">
+                <div class="row">
+                  <div class="col-7" style="height: 90vh;"> <?php echo '<iframe src="' . $lienIframe . '" style="height: 100%; width: 100%"></iframe>'; ?> </div>
+                  <div class="col-4">
+                    <!-- texte a inserer -->
+                    <div class="d-flex align-items-start bg-light mb-3" style="height: 30vh; font-size: 20px; line-height: 30px;">
+                      <br>
+                      <?php echo $description; ?>
+                      </br>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-          <div class="media py-4">
-            <img src="images/user-3.jpg" class="img-fluid align-self-start rounded-circle mr-3" alt="">
-            <div class="media-body">
-              <h5 class="mt-0">Bruce Bernier.</h5>
-              <p>15 january 2015 At 10:30 pm</p>
-              <p>Ne erat velit invidunt his. Eum in dicta veniam interesset, harum fuisset te nam ea cu lupta
-                definitionem.</p>
-              <a href="#!" class="btn btn-transparent btn-sm pl-0">Reply</a>
-            </div>
-          </div>
         </div>
-        <div class="mt-5">
-          <h4 class="font-weight-bold mb-3 border-bottom pb-3">Leave a Comment</h4>
-          <form action="#" class="row">
-            <div class="col-md-6">
-              <input type="text" class="form-control mb-3" placeholder="First Name" name="fname" id="fname" required>
-              <input type="text" class="form-control mb-3" placeholder="Last Name" name="lname" id="lname" required>
-              <input type="text" class="form-control mb-3" placeholder="Email *" name="mail" id="mail" required>
-            </div>
-            <div class="col-md-6">
-              <textarea name="comment" id="comment" placeholder="Message" class="form-control mb-4"></textarea required>
-              <button type="submit" class="btn btn-primary w-100">Send Message</button>
+      </section>
+      <!-- /projet -->
+
+      <!-- Commentaire -->
+      <section>
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-12">
+              <h4 class="font-weight-bold mb-3">Commentaire</h4>
+              <div class="bg-gray p-5 mb-4">
+                <div class="media border-bottom py-4">
+                  <img src="images/user-1.jpg" class="img-fluid align-self-start rounded-circle mr-3" alt="">
+                  <div class="media-body">
+                    <h5 class="mt-0">Carole Marvin.</h5>
+                    <p>15 january 2015 At 10:30 pm</p>
+                    <p>Ne erat velit invidunt his. Eum in dicta veniam interesset, harum fuisset te nam ea cu lupta
+                      definitionem.</p>
+                  </div>
+                </div>
+                <div class="media py-4">
+                  <img src="images/user-3.jpg" class="img-fluid align-self-start rounded-circle mr-3" alt="">
+                  <div class="media-body">
+                    <h5 class="mt-0">Bruce Bernier.</h5>
+                    <p>15 january 2015 At 10:30 pm</p>
+                    <p>Ne erat velit invidunt his. Eum in dicta veniam interesset, harum fuisset te nam ea cu lupta
+                      definitionem.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="mt-5">
+                <h4 class="font-weight-bold mb-3 border-bottom pb-3">Laisse un commentaire</h4>
+                <form action="./projet-details.php?idProjet= <?php echo $idDocument ?>" class="row" method="get">
+                  <div class="col-md-6">
+                    <input type="text" class="form-control mb-3" placeholder="Prénom" name="prenom" id="prenom" required>
+                    <input type="text" class="form-control mb-3" placeholder="Nom" name="nom" id="nom" required>
+                    <input type="text" class="form-control mb-3" placeholder="Email *" name="mail" id="mail" required>
+                  </div>
+                  <div class="col-md-6">
+                    <textarea name="comment" id="message" placeholder="Message" class="form-control mb-4"></textarea required>
+              <button type="submit" class="btn btn-primary w-100">Poster</button>
             </div>
           </form>
         </div>
@@ -131,96 +115,25 @@ if(isset($lienIframe) && isset($idDocument) && isset($titreDocument) && isset($d
     </div>
   </div>
 </section>
+<!-- Commentaire -->
 
-<!-- blog -->
-<section class="section">
-  <div class="container">
-    <div class="row">
-      <div class="col-12 text-center">
-        <h2 class="section-title">Similar Stories</h2>
-      </div>
-      <div class="col-lg-4 col-sm-6 mb-4 mb-lg-0">
-        <article class="card shadow">
-          <img class="rounded card-img-top" src="images/blog/post-3.jpg" alt="post-thumb">
-          <div class="card-body">
-            <h4 class="card-title"><a class="text-dark" href="blog-single.php">Amazon increase income 1.5 Million</a>
-            </h4>
-            <p class="cars-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-              incididunt ut labore et
-              dolore magna aliqua.</p>
-            <a href="blog-single.php" class="btn btn-xs btn-primary">Read More</a>
-          </div>
-        </article>
-      </div>
-      <div class="col-lg-4 col-sm-6 mb-4 mb-lg-0">
-        <article class="card shadow">
-          <img class="rounded card-img-top" src="images/blog/post-4.jpg" alt="post-thumb">
-          <div class="card-body">
-            <h4 class="card-title"><a class="text-dark" href="blog-single.php">Amazon increase income 1.5 Million</a>
-            </h4>
-            <p class="cars-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-              incididunt ut labore et
-              dolore magna aliqua.</p>
-            <a href="blog-single.php" class="btn btn-xs btn-primary">Read More</a>
-          </div>
-        </article>
-      </div>
-      <div class="col-lg-4 col-sm-6 mb-4 mb-lg-0">
-        <article class="card shadow">
-          <img class="rounded card-img-top" src="images/blog/post-2.jpg" alt="post-thumb">
-          <div class="card-body">
-            <h4 class="card-title"><a class="text-dark" href="blog-single.php">Amazon increase income 1.5 Million</a>
-            </h4>
-            <p class="cars-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-              incididunt ut labore et
-              dolore magna aliqua.</p>
-            <a href="blog-single.php" class="btn btn-xs btn-primary">Read More</a>
-          </div>
-        </article>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- /blog -->
+    <?php
+    require_once "footer.php";
+    ?>
+  </body>
 
-<!-- contact -->
-<section class="section section-on-footer" data-background="images/backgrounds/bg-dots.png">
-  <div class="container">
-    <div class="row">
-      <div class="col-12 text-center">
-        <h2 class="section-title">Contact Info</h2>
-      </div>
-      <div class="col-lg-8 mx-auto">
-        <div class="bg-white rounded text-center p-5 shadow-down">
-          <h4 class="mb-80">Contact Form</h4>
-          <form action="#" class="row">
-            <div class="col-md-6">
-              <input type="text" id="name" name="name" placeholder="Full Name" class="form-control px-0 mb-4" required>
-            </div>
-            <div class="col-md-6">
-              <input type="email" id="email" name="email" placeholder="Email Address" class="form-control px-0 mb-4" required>
-            </div>
-            <div class="col-12">
-              <textarea name="message" id="message" class="form-control px-0 mb-4"
-                placeholder="Type Message Here" required></textarea>
-            </div>
-            <div class="col-lg-6 col-10 mx-auto">
-              <button class="btn btn-primary w-100">send</button>
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- /contact -->
+</html>
+<?php
+    //fin if isset
+  }
+}
+else {
+  header("Location: error-404.php");
+  exit();
 
-<?php 
-require_once "footer.php";
 ?>
 </body>
 </html>
-<?php 
-//fin if isset
+<?php
 }
 ?>
