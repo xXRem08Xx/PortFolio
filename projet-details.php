@@ -99,17 +99,21 @@ if ( isset($_GET['idProjet']) && !empty($_GET['idProjet'])) {
               </div>
               <div class="mt-5">
                 <h4 class="font-weight-bold mb-3 border-bottom pb-3">Laisse un commentaire</h4>
-                <form action="./projet-details.php?idProjet= <?php echo $idDocument ?>" class="row" method="get">
+
+                <!-- formulaire -->
+                <form action="./projet-details.php" class="row" method="get">
                   <div class="col-md-6">
                     <input type="text" class="form-control mb-3" placeholder="Prénom" name="prenom" id="prenom" required>
                     <input type="text" class="form-control mb-3" placeholder="Nom" name="nom" id="nom" required>
                     <input type="text" class="form-control mb-3" placeholder="Email *" name="mail" id="mail" required>
+                    <input type="text" class="form-control mb-3" name="idProjet" id="idProjet" value="<?php echo $idDocument ?>">
                   </div>
                   <div class="col-md-6">
                     <textarea name="comment" id="message" placeholder="Message" class="form-control mb-4"></textarea required>
               <button type="submit" class="btn btn-primary w-100">Poster</button>
             </div>
           </form>
+          <!-- /formulaire -->
         </div>
       </div>
     </div>
@@ -128,8 +132,9 @@ if ( isset($_GET['idProjet']) && !empty($_GET['idProjet'])) {
   }
 }
 else {
-  header("Location: error-404.php");
-  exit();
+  
+  //header("Location: error-404.php");
+  //exit();
 
 ?>
 </body>
