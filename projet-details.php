@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="fr">
-  <?php
-  $title = "portfolio-details";
-if ( isset($_GET['idProjet']) && !empty($_GET['idProjet'])) {
+<?php
+$title = "portfolio-details";
+if (isset($_GET['idProjet']) && !empty($_GET['idProjet'])) {
   $idDocument = $_GET['idProjet'];
   include "header.php";
   require_once "./bdd_connexion.php";
@@ -71,6 +71,66 @@ if ( isset($_GET['idProjet']) && !empty($_GET['idProjet'])) {
       </section>
       <!-- /projet -->
 
+
+
+      <?php
+        /*    
+        $requeteInformationGlobal = "SELECT `numeroCommentaire`, `dateHeureInsertion`, `message`, `nom`, `prenom`, `email`, `numeroDocument` 
+        FROM `commentaire` WHERE `numeroDocument` = " . $idDocument . "
+        AND extract(DAY FROM `dateHeureInsertion`) = extract(DAY FROM now()) 
+        AND extract(YEAR_MONTH FROM `dateHeureInsertion`) = extract(YEAR_MONTH FROM now()) ORDER BY `dateHeureInsertion`;";
+        $resultatInformation = $pdo->query($requeteInformationGlobal);
+        $resultatInformation = $resultatInformation->fetchAll();
+        */
+
+      //on initialise un message d'erreur qui sera affiché en dessus du formulaire si il y a une erreur
+      $messageError = "";
+      $boolErrorForm = false;
+
+      //si les variables du formulaire sont toutes defini dans l'url
+      if (isset($_GET['mail'], $_GET['nom'], $_GET['prenom'], $_GET['idProjet'], $_GET['message'])) {
+        //on recupere tous les commentaires du jour correspondant au document datant de mois  de 10 min
+        $requeteInformationGlobal = 'SELECT * FROM commentaire WHERE TIMEDIFF(now(), dateHeureInsertion) < "00:10" AND numeroDocument = '.$idDocument.' ;';
+        $resultatInformation = $pdo->query($requeteInformationGlobal);
+        $resultatInformation = $resultatInformation->fetchAll();
+
+
+        /* //on fait la verification des caracteres speciaux que l'on remplace
+        $insertionForm = str_replace("'", "\'", $insertionForm);
+        $insertionForm = str_replace('"', '\"', $insertionForm);
+        $insertionForm = str_replace("<", "<>", $insertionForm);
+        $insertionForm = str_replace(">", "<>", $insertionForm);
+        $insertionForm = str_replace(";", ".", $insertionForm);
+*/
+        //pour chaque commentaire
+        foreach ($resultatInformation as $commentaire ) {
+          //on verifie si les champs nom et prenom ou adresse mail sont identique a ceux du formulaire
+          if( ($commentaire['nom'] == $_GET['nom'] && $commentaire['prenom'] == $_GET['prenom']) || $commentaire['email'] == $_GET['mail']) {
+            //si oui, on sauvegarde un message d'erreur pour annoncer que on a droit qu'a un commentaire toutes les 10 mins
+            $messageError =  "Attention ! Vous n'avez droit qu'à un commentaire toute les 10 minutes.";
+            //si on rencontre un cas de reecriture, on definit le bool a vrai
+            $boolErrorForm = true;
+          }
+        }
+        //si on a pas rencontré de cas de reecriture, on execute la requete d'insertion
+        if (!$boolErrorForm) {
+          //on fait la requete preparé
+          $insertionForm = $pdo->prepare("INSERT INTO `commentaire`(`message`, `nom`, `prenom`, `email`, `numeroDocument`) VALUES (:message, :nom, :prenom, :email, :numeroDocument)");
+          $insertionForm->bindParam(':message', $message);
+          $insertionForm->bindParam(':nom', $nom);
+          $insertionForm->bindParam(':prenom', $prenom);
+          $insertionForm->bindParam(':email', $email);
+          $insertionForm->bindParam(':numeroDocument', $numeroDocument);
+
+          $message = $_GET['message'];
+          $nom =  $_GET['nom'];
+          $prenom = $_GET['prenom'];
+          $email = $_GET['mail'];
+          $numeroDocument = $idDocument;
+          $insertionForm->execute();
+        }
+      }
+      ?>
       <!-- Commentaire -->
       <section>
         <div class="container">
@@ -87,6 +147,7 @@ if ( isset($_GET['idProjet']) && !empty($_GET['idProjet'])) {
                       definitionem.</p>
                   </div>
                 </div>
+                <!--
                 <div class="media py-4">
                   <img src="images/user-3.jpg" class="img-fluid align-self-start rounded-circle mr-3" alt="">
                   <div class="media-body">
@@ -96,21 +157,23 @@ if ( isset($_GET['idProjet']) && !empty($_GET['idProjet'])) {
                       definitionem.</p>
                   </div>
                 </div>
+                -->
               </div>
               <div class="mt-5">
+                <h6 style="color: red;"><?php echo $messageError ?></h6>
                 <h4 class="font-weight-bold mb-3 border-bottom pb-3">Laisse un commentaire</h4>
 
                 <!-- formulaire -->
-                <form action="./projet-details.php" class="row" method="get">
+                <form action="./projet-details.php" class="row" method="get" id="formulaireCommentaire">
                   <div class="col-md-6">
                     <input type="text" class="form-control mb-3" placeholder="Prénom" name="prenom" id="prenom" required>
                     <input type="text" class="form-control mb-3" placeholder="Nom" name="nom" id="nom" required>
-                    <input type="text" class="form-control mb-3" placeholder="Email *" name="mail" id="mail" required>
-                    <input type="text" class="form-control mb-3" name="idProjet" id="idProjet" value="<?php echo $idDocument ?>">
+                    <input type="email" class="form-control mb-3" placeholder="Email *" name="mail" id="mail" required>
+                    <input type="text" class="form-control mb-3" name="idProjet" id="idProjet" value="<?php echo $idDocument ?>" hidden>
                   </div>
                   <div class="col-md-6">
-                    <textarea name="comment" id="message" placeholder="Message" class="form-control mb-4"></textarea required>
-              <button type="submit" class="btn btn-primary w-100">Poster</button>
+                    <textarea name="message" id="message" placeholder="Message" class="form-control mb-4"></textarea required>
+              <button type="submit" class="btn btn-primary w-100">Publier</button>
             </div>
           </form>
           <!-- /formulaire -->
@@ -130,11 +193,10 @@ if ( isset($_GET['idProjet']) && !empty($_GET['idProjet'])) {
 <?php
     //fin if isset
   }
-}
-else {
-  
-  //header("Location: error-404.php");
-  //exit();
+} else {
+
+  header("Location: error-404.php");
+  exit();
 
 ?>
 </body>
