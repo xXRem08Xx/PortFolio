@@ -15,14 +15,17 @@ if (isset($_GET['idProjet']) && !empty($_GET['idProjet'])) {
   $titreDocument = $resultat[0]['titreProjet'];
   $description = $resultat[0]['description'];
   $date = $resultat[0]['dateInsertion'];
-
-  if (isset($lienIframe) && isset($idDocument) && isset($titreDocument) && isset($description) && isset($date)) {
-
 ?>
 
-    <body>
+  <body>
+    <?php
+
+    if (isset($lienIframe) && isset($idDocument) && isset($titreDocument) && isset($description) && isset($date)) {
+
+    ?>
+
       <?php
-      require_once "./nav-bar.php";
+      include "./nav-bar.php";
       ?>
 
       <!-- titre de la page -->
@@ -86,6 +89,7 @@ if (isset($_GET['idProjet']) && !empty($_GET['idProjet'])) {
         $resultatInformation = $pdo->query($requeteInformationGlobal);
         $resultatInformation = $resultatInformation->fetchAll();
 
+        $messageError = "";
         //pour chaque commentaire
         foreach ($resultatInformation as $commentaire) {
           //on verifie si les champs nom et prenom ou adresse mail sont identique a ceux du formulaire
@@ -99,6 +103,8 @@ if (isset($_GET['idProjet']) && !empty($_GET['idProjet'])) {
         //si on a pas rencontré de cas de reecriture, on execute la requete d'insertion
         if (!$boolErrorForm) {
           //on fait la requete preparé
+
+
           $insertionForm = $pdo->prepare("INSERT INTO `commentaire`(`message`, `nom`, `prenom`, `email`, `numeroDocument`) VALUES (:message, :nom, :prenom, :email, :numeroDocument)");
           $insertionForm->bindParam(':message', $message);
           $insertionForm->bindParam(':nom', $nom);
@@ -111,18 +117,27 @@ if (isset($_GET['idProjet']) && !empty($_GET['idProjet'])) {
           $prenom = $_GET['prenom'];
           $email = $_GET['mail'];
           $numeroDocument = $idDocument;
-          $insertionForm->execute();
+
+          //on verifie si le message comporte au moins 2 caracteres
+          if (strlen($message) < 2) {
+            $boolErrorForm = true;
+            $messageError = "Attention, vous devez remplir le message avec au moins 2 caractères";
+          }
+          //si le message comporte plus de 2 caracteres on insere
+          else {
+            $insertionForm->execute();
+          }
         }
       }
       ?>
       <!-- Commentaire -->
       <?php
-      
+
       $requeteInformationGlobal = "SELECT `numeroCommentaire`, `dateHeureInsertion`, `message`, `nom`, `prenom`, `email`, `numeroDocument` 
-          FROM `commentaire` WHERE `numeroDocument` = " . $idDocument . " ORDER BY `dateHeureInsertion` LIMIT 10;";
+          FROM `commentaire` WHERE `numeroDocument` = " . $idDocument . " AND `message` != '' ORDER BY `dateHeureInsertion` desc LIMIT 6;";
       $retourCommentaire = $pdo->query($requeteInformationGlobal);
       $resultat = $retourCommentaire->fetchAll();
-      
+
       ?>
       <section>
         <div class="container">
@@ -132,20 +147,20 @@ if (isset($_GET['idProjet']) && !empty($_GET['idProjet'])) {
               <div class="bg-gray p-5 mb-4">
 
                 <?php
-                  //pour chaque commentaire retourné
-                  foreach ($resultat as $comment) {
-                    //on recup les valeurs 
-                    $texteComment = $comment['message'];
-                    $nomPrenomComment = $comment['prenom'] . " " . $comment['nom'];
-                    $dateHeureComment = $comment['dateHeureInsertion'];
+                //pour chaque commentaire retourné
+                foreach ($resultat as $comment) {
+                  //on recup les valeurs 
+                  $texteComment = $comment['message'];
+                  $nomPrenomComment = $comment['prenom'] . " " . $comment['nom'];
+                  $dateHeureComment = $comment['dateHeureInsertion'];
 
-                    //on modifie l'affichage de la date
-                    $format = "d/m/Y H:i:s";
-                    $dateTimeComment = date_format(new DateTime($dateHeureComment),$format);
+                  //on modifie l'affichage de la date
+                  $format = "d/m/Y H:i:s";
+                  $dateTimeComment = date_format(new DateTime($dateHeureComment), $format);
 
-                    //fin modif affichage
+                  //fin modif affichage
 
-                    $numImageUtilisateur = rand(1,10);
+                  $numImageUtilisateur = rand(1, 10);
                 ?>
                   <div class="media border-bottom py-4">
                     <img src="./images/commentaire/utilisateur-<?php echo $numImageUtilisateur ?>.png" style="max-width: 50px; max-height: 50px" class="img-fluid align-self-start rounded-circle mr-3" alt="">
@@ -156,32 +171,21 @@ if (isset($_GET['idProjet']) && !empty($_GET['idProjet'])) {
                     </div>
                   </div>
 
-                  <?php
-                  } //fin foreach retourComment
+                <?php
+                } //fin foreach retourComment
                 ?>
-                <!--
-                  <div class="media py-4">
-                    <img src="images/user-3.jpg" class="img-fluid align-self-start rounded-circle mr-3" alt="">
-                    <div class="media-body">
-                      <h5 class="mt-0">Bruce Bernier.</h5>
-                      <p>15 january 2015 At 10:30 pm</p>
-                      <p>Ne erat velit invidunt his. Eum in dicta veniam interesset, harum fuisset te nam ea cu lupta
-                        definitionem.</p>
-                    </div>
-                  </div>
-                  -->
               </div>
               <div class="mt-5">
-                <h6 style="color: red;"><?php echo $messageError ?></h6>
+                <h6 style="color: red;"><?php if ($boolErrorForm) echo $messageError; ?></h6>
                 <h4 class="font-weight-bold mb-3 border-bottom pb-3">Laisse un commentaire</h4>
 
                 <!-- formulaire -->
                 <form action="./projet-details.php" class="row" method="get" id="formulaireCommentaire">
                   <div class="col-md-6">
-                    <input type="text" class="form-control mb-3" placeholder="Prénom" name="prenom" id="prenom" required>
-                    <input type="text" class="form-control mb-3" placeholder="Nom" name="nom" id="nom" required>
+                    <input type="text" class="form-control mb-3" placeholder="Prénom" name="prenom" id="prenom" maxlength="30" required>
+                    <input type="text" class="form-control mb-3" placeholder="Nom" name="nom" id="nom" maxlength="30" required>
                     <input type="email" class="form-control mb-3" placeholder="Email *" name="mail" id="mail" required>
-                    <input type="text" class="form-control mb-3" name="idProjet" id="idProjet" value="<?php echo $idDocument ?>" hidden>
+                    <input type="text" class="form-control mb-3" name="idProjet" id="idProjet" maxlength="500" value="<?php echo $idDocument ?>" hidden>
                   </div>
                   <div class="col-md-6">
                     <textarea name="message" id="message" placeholder="Message" class="form-control mb-4"></textarea required>
@@ -197,18 +201,18 @@ if (isset($_GET['idProjet']) && !empty($_GET['idProjet'])) {
 <!-- Commentaire -->
 
     <?php
-    require_once "footer.php";
+      require_once "footer.php";
     ?>
   </body>
 
 </html>
 <?php
-    //fin if isset
-  }
-} else {
+      //fin if isset
+    }
+  } else {
 
-  header("Location: error-404.php");
-  exit();
+    header("Location: error-404.php");
+    exit();
 
 ?>
 </body>
