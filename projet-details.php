@@ -51,7 +51,7 @@ if (isset($_GET['idProjet']) && !empty($_GET['idProjet'])) {
           <div class="row">
             <div class="col-lg-12">
               <h3 class="font-tertiary mb-3"> <?php echo $titreDocument ?> </h3>
-              <p class="font-secondary mb-5">Publié le <?php echo $date ?> par<span class="text-primary"> Remi</span class="text-primary"></p>
+              <p class="font-secondary mb-5">Publié le <?php echo $date ?> par<span class="text-primary"> Remi</span></p>
               <div class="content">
                 <div class="row">
                   <div class="col-7" style="height: 90vh;"> <?php echo '<iframe src="' . $lienIframe . '" style="height: 100%; width: 100%"></iframe>'; ?> </div>
@@ -74,14 +74,6 @@ if (isset($_GET['idProjet']) && !empty($_GET['idProjet'])) {
 
 
       <?php
-        /*    
-        $requeteInformationGlobal = "SELECT `numeroCommentaire`, `dateHeureInsertion`, `message`, `nom`, `prenom`, `email`, `numeroDocument` 
-        FROM `commentaire` WHERE `numeroDocument` = " . $idDocument . "
-        AND extract(DAY FROM `dateHeureInsertion`) = extract(DAY FROM now()) 
-        AND extract(YEAR_MONTH FROM `dateHeureInsertion`) = extract(YEAR_MONTH FROM now()) ORDER BY `dateHeureInsertion`;";
-        $resultatInformation = $pdo->query($requeteInformationGlobal);
-        $resultatInformation = $resultatInformation->fetchAll();
-        */
 
       //on initialise un message d'erreur qui sera affiché en dessus du formulaire si il y a une erreur
       $messageError = "";
@@ -90,22 +82,14 @@ if (isset($_GET['idProjet']) && !empty($_GET['idProjet'])) {
       //si les variables du formulaire sont toutes defini dans l'url
       if (isset($_GET['mail'], $_GET['nom'], $_GET['prenom'], $_GET['idProjet'], $_GET['message'])) {
         //on recupere tous les commentaires du jour correspondant au document datant de mois  de 10 min
-        $requeteInformationGlobal = 'SELECT * FROM commentaire WHERE TIMEDIFF(now(), dateHeureInsertion) < "00:10" AND numeroDocument = '.$idDocument.' ;';
+        $requeteInformationGlobal = 'SELECT * FROM commentaire WHERE TIMEDIFF(now(), dateHeureInsertion) < "00:10" AND numeroDocument = ' . $idDocument . ' ;';
         $resultatInformation = $pdo->query($requeteInformationGlobal);
         $resultatInformation = $resultatInformation->fetchAll();
 
-
-        /* //on fait la verification des caracteres speciaux que l'on remplace
-        $insertionForm = str_replace("'", "\'", $insertionForm);
-        $insertionForm = str_replace('"', '\"', $insertionForm);
-        $insertionForm = str_replace("<", "<>", $insertionForm);
-        $insertionForm = str_replace(">", "<>", $insertionForm);
-        $insertionForm = str_replace(";", ".", $insertionForm);
-*/
         //pour chaque commentaire
-        foreach ($resultatInformation as $commentaire ) {
+        foreach ($resultatInformation as $commentaire) {
           //on verifie si les champs nom et prenom ou adresse mail sont identique a ceux du formulaire
-          if( ($commentaire['nom'] == $_GET['nom'] && $commentaire['prenom'] == $_GET['prenom']) || $commentaire['email'] == $_GET['mail']) {
+          if (($commentaire['nom'] == $_GET['nom'] && $commentaire['prenom'] == $_GET['prenom']) || $commentaire['email'] == $_GET['mail']) {
             //si oui, on sauvegarde un message d'erreur pour annoncer que on a droit qu'a un commentaire toutes les 10 mins
             $messageError =  "Attention ! Vous n'avez droit qu'à un commentaire toute les 10 minutes.";
             //si on rencontre un cas de reecriture, on definit le bool a vrai
@@ -132,32 +116,60 @@ if (isset($_GET['idProjet']) && !empty($_GET['idProjet'])) {
       }
       ?>
       <!-- Commentaire -->
+      <?php
+      
+      $requeteInformationGlobal = "SELECT `numeroCommentaire`, `dateHeureInsertion`, `message`, `nom`, `prenom`, `email`, `numeroDocument` 
+          FROM `commentaire` WHERE `numeroDocument` = " . $idDocument . " ORDER BY `dateHeureInsertion` LIMIT 10;";
+      $retourCommentaire = $pdo->query($requeteInformationGlobal);
+      $resultat = $retourCommentaire->fetchAll();
+      
+      ?>
       <section>
         <div class="container">
           <div class="row">
             <div class="col-lg-12">
               <h4 class="font-weight-bold mb-3">Commentaire</h4>
               <div class="bg-gray p-5 mb-4">
-                <div class="media border-bottom py-4">
-                  <img src="images/user-1.jpg" class="img-fluid align-self-start rounded-circle mr-3" alt="">
-                  <div class="media-body">
-                    <h5 class="mt-0">Carole Marvin.</h5>
-                    <p>15 january 2015 At 10:30 pm</p>
-                    <p>Ne erat velit invidunt his. Eum in dicta veniam interesset, harum fuisset te nam ea cu lupta
-                      definitionem.</p>
+
+                <?php
+                  //pour chaque commentaire retourné
+                  foreach ($resultat as $comment) {
+                    //on recup les valeurs 
+                    $texteComment = $comment['message'];
+                    $nomPrenomComment = $comment['prenom'] . " " . $comment['nom'];
+                    $dateHeureComment = $comment['dateHeureInsertion'];
+
+                    //on modifie l'affichage de la date
+                    $format = "d/m/Y H:i:s";
+                    $dateTimeComment = date_format(new DateTime($dateHeureComment),$format);
+
+                    //fin modif affichage
+
+                    $numImageUtilisateur = rand(1,10);
+                ?>
+                  <div class="media border-bottom py-4">
+                    <img src="./images/commentaire/utilisateur-<?php echo $numImageUtilisateur ?>.png" style="max-width: 50px; max-height: 50px" class="img-fluid align-self-start rounded-circle mr-3" alt="">
+                    <div class="media-body">
+                      <h5 class="mt-0"><?php echo $nomPrenomComment ?></h5>
+                      <p><?php echo $dateTimeComment ?></p>
+                      <p><?php echo $texteComment ?></p>
+                    </div>
                   </div>
-                </div>
+
+                  <?php
+                  } //fin foreach retourComment
+                ?>
                 <!--
-                <div class="media py-4">
-                  <img src="images/user-3.jpg" class="img-fluid align-self-start rounded-circle mr-3" alt="">
-                  <div class="media-body">
-                    <h5 class="mt-0">Bruce Bernier.</h5>
-                    <p>15 january 2015 At 10:30 pm</p>
-                    <p>Ne erat velit invidunt his. Eum in dicta veniam interesset, harum fuisset te nam ea cu lupta
-                      definitionem.</p>
+                  <div class="media py-4">
+                    <img src="images/user-3.jpg" class="img-fluid align-self-start rounded-circle mr-3" alt="">
+                    <div class="media-body">
+                      <h5 class="mt-0">Bruce Bernier.</h5>
+                      <p>15 january 2015 At 10:30 pm</p>
+                      <p>Ne erat velit invidunt his. Eum in dicta veniam interesset, harum fuisset te nam ea cu lupta
+                        definitionem.</p>
+                    </div>
                   </div>
-                </div>
-                -->
+                  -->
               </div>
               <div class="mt-5">
                 <h6 style="color: red;"><?php echo $messageError ?></h6>
