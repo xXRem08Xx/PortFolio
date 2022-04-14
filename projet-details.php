@@ -105,6 +105,7 @@ if (isset($_GET['idProjet']) && !empty($_GET['idProjet'])) {
           //on fait la requete preparé
 
 
+
           $insertionForm = $pdo->prepare("INSERT INTO `commentaire`(`message`, `nom`, `prenom`, `email`, `numeroDocument`) VALUES (:message, :nom, :prenom, :email, :numeroDocument)");
           $insertionForm->bindParam(':message', $message);
           $insertionForm->bindParam(':nom', $nom);
@@ -118,10 +119,35 @@ if (isset($_GET['idProjet']) && !empty($_GET['idProjet'])) {
           $email = $_GET['mail'];
           $numeroDocument = $idDocument;
 
+          //on fait la verif des insertions de balise < et >
+          $boolMessageBaliseEntree = preg_match("#<#", $message);
+          $boolMessageBaliseFermer = preg_match("#>#", $message);
+
+          $boolNomBaliseEntree = preg_match("#<#", $nom . $prenom);
+          $boolNomBaliseFermer = preg_match("#>#", $nom . $prenom);
+
+          $boolEmailBaliseEntree = preg_match("#<#", $email);
+          $boolEmailBaliseFermer = preg_match("#>#", $email);
+
           //on verifie si le message comporte au moins 2 caracteres
           if (strlen($message) < 2) {
             $boolErrorForm = true;
             $messageError = "Attention, vous devez remplir le message avec au moins 2 caractères";
+          }
+          //si on a trouver les balises dans le message
+          else if ($boolMessageBaliseEntree || $boolMessageBaliseFermer) {
+            $boolErrorForm = true;
+            $messageError = "Attention, l'insertion de code intrusif est interdit ! --> Champ Message";
+          }
+          //si on a trouver les balises dans le nom ou le prenom
+          else if ($boolNomBaliseEntree || $boolNomBaliseFermer) {
+            $boolErrorForm = true;
+            $messageError = "Attention, l'insertion de code intrusif est interdit ! --> Champ Nom / Prenom";
+          }
+          //si on a trouver les balises dans le nom ou le prenom
+          else if ($boolEmailBaliseEntree || $boolEmailBaliseFermer) {
+            $boolErrorForm = true;
+            $messageError = "Attention, l'insertion de code intrusif est interdit ! --> Champ Mail";
           }
           //si le message comporte plus de 2 caracteres on insere
           else {
@@ -218,5 +244,5 @@ if (isset($_GET['idProjet']) && !empty($_GET['idProjet'])) {
 </body>
 </html>
 <?php
-}
+  }
 ?>
