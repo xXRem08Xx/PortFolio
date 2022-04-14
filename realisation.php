@@ -2,7 +2,7 @@
 <html lang="fr">
 
 <?php
-$title = "PortFolio";
+$title = "Réalisation";
 require_once "./header.php";
 require_once "./function.php";
 ?>
@@ -19,7 +19,7 @@ require_once "./function.php";
   <div class="container">
     <div class="row">
       <div class="col-12 text-center">
-        <h1 class="text-white font-tertiary">Portfolio</h1>
+        <h1 class="text-white font-tertiary">Réalisation</h1>
       </div>
     </div>
   </div>

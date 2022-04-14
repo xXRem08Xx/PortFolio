@@ -2,7 +2,7 @@
 <html lang="fr">
 
 <?php
-$title = "Stage 2ème année";
+$title = "titre de la page";
 require_once "./header.php";
 require_once "./function.php";
 ?>
@@ -19,7 +19,7 @@ require_once "./function.php";
         <div class="container">
             <div class="row">
                 <div class="col-12 text-center">
-                    <h1 class="text-white font-tertiary">Stage de 2ème année</h1>
+                    <h1 class="text-white font-tertiary">Titre de la page</h1>
                 </div>
             </div>
         </div>

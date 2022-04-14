@@ -21,17 +21,17 @@
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarBoiteOutilsLink">
             <li>
-              <a class="dropdown-item" href="#">Dévellopement C++</a>
+              <a class="dropdown-item" href="boite-c++.php">Dévellopement C++</a>
             </li>
             <li>
-              <a class="dropdown-item" href="#">Dévellopement Web</a>
+              <a class="dropdown-item" href="boite-web.php">Dévellopement Web</a>
             </li>
             <li>
-              <a class="dropdown-item" href="realisation.php">Systeme Linux</a>
+              <a class="dropdown-item" href="boite-linux.php">Systeme Linux</a>
             </li>
           </ul>
         </li>
-                <!-- fin sous menu Boite a outils-->
+        <!-- fin sous menu Boite a outils-->
 
 
         <!-- sous menu Projets-->
@@ -41,10 +41,10 @@
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarProjetLink">
             <li>
-              <a class="dropdown-item" href="#">Stage 1ère année</a>
+              <a class="dropdown-item" href="stage-1.php">Stage 1ère année</a>
             </li>
             <li>
-              <a class="dropdown-item" href="#">Stage 2ème année</a>
+              <a class="dropdown-item" href="stage-2.php">Stage 2ème année</a>
             </li>
             <li>
               <a class="dropdown-item" href="realisation.php">Réalisation</a>
