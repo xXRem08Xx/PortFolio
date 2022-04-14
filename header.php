@@ -27,9 +27,7 @@
   <!-- Main Stylesheet -->
   <link href="css/style.css" rel="stylesheet">
 
-  <?php
-  include_once "bdd_connexion.php";
-  ?>
+
 
 
 

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : mar. 05 avr. 2022 à 21:44
+-- Généré le : jeu. 14 avr. 2022 à 21:55
 -- Version du serveur :  5.7.31
 -- Version de PHP : 7.3.21
 
@@ -75,6 +75,29 @@ CREATE TABLE IF NOT EXISTS `commentaire` (
 
 INSERT INTO `commentaire` (`numeroCommentaire`, `dateHeureInsertion`, `message`, `nom`, `prenom`, `email`, `numeroDocument`) VALUES
 (1, '2022-04-05 15:57:37', 'C\'est un projet génial !<br/> C\'est mon préféré <3', 'maissa', 'remi', 'maissa.rem08@gmail.com', 4);
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `contact`
+--
+
+DROP TABLE IF EXISTS `contact`;
+CREATE TABLE IF NOT EXISTS `contact` (
+  `idContact` int(11) NOT NULL AUTO_INCREMENT,
+  `nom_prenom` varchar(150) NOT NULL,
+  `mail` varchar(150) NOT NULL,
+  `message` varchar(2000) NOT NULL,
+  `datePost` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`idContact`)
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+--
+-- Déchargement des données de la table `contact`
+--
+
+INSERT INTO `contact` (`idContact`, `nom_prenom`, `mail`, `message`, `datePost`) VALUES
+(1, 'remi maissa', 'maissa.rem08@gmail.com', 'Salut, je test ma base de données !', '2022-04-14 23:55:23');
 
 -- --------------------------------------------------------
 

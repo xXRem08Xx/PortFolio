@@ -8,35 +8,9 @@ include_once "header.php";
 
 <body>
 
-<!-- nav bar index != nav-bar.php -->
-  <header class="navigation fixed-top">
-    <nav class="navbar navbar-expand-lg navbar-dark">
-      <a class="navbar-brand font-tertiary h3" href="index.php"><img src="images/logo.png" alt="Myself"></a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      <div class="collapse navbar-collapse text-center" id="navigation">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="index.php">Accueil</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="about.php">Qui suis-je</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="realisation.php">Projet</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="contact.php">Contact</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="test.php">Test</a>
-          </li>
-        </ul>
-      </div>
-    </nav>
-  </header>
+<?php
+  require_once "./nav-bar.php";
+  ?>
   <!-- /nav bar -->
 
   <!-- header page entiere -->
@@ -263,121 +237,6 @@ include_once "header.php";
     </div>
   </section>
   <!-- /services -->
-
-  <!-- portfolio -->
-  <section class="section">
-    <div class="container">
-      <div class="row">
-        <div class="col-12 text-center">
-          <h2 class="section-title">portfolio</h2>
-        </div>
-      </div>
-      <div class="row shuffle-wrapper">
-        <div class="col-lg-4 col-6 mb-4 shuffle-item">
-          <div class="position-relative rounded hover-wrapper">
-            <img src="images/projet/item-1.png" alt="portfolio-image" class="img-fluid rounded w-100">
-            <div class="hover-overlay">
-              <div class="hover-content">
-                <a class="btn btn-light btn-sm" href="#!">view project</a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-6 mb-4 shuffle-item">
-          <div class="position-relative rounded hover-wrapper">
-            <img src="images/projet/item-2.png" alt="portfolio-image" class="img-fluid rounded w-100">
-            <div class="hover-overlay">
-              <div class="hover-content">
-                <a class="btn btn-light btn-sm" href="#!">view project</a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-6 mb-4 shuffle-item">
-          <div class="position-relative rounded hover-wrapper">
-            <img src="images/projet/item-3.png" alt="portfolio-image" class="img-fluid rounded w-100">
-            <div class="hover-overlay">
-              <div class="hover-content">
-                <a class="btn btn-light btn-sm" href="#!">view project</a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-6 mb-4 shuffle-item">
-          <div class="position-relative rounded hover-wrapper">
-            <img src="images/projet/item-4.png" alt="portfolio-image" class="img-fluid rounded w-100">
-            <div class="hover-overlay">
-              <div class="hover-content">
-                <a class="btn btn-light btn-sm" href="#!">view project</a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-6 mb-4 shuffle-item">
-          <div class="position-relative rounded hover-wrapper">
-            <img src="images/projet/item-5.png" alt="portfolio-image" class="img-fluid rounded w-100">
-            <div class="hover-overlay">
-              <div class="hover-content">
-                <a class="btn btn-light btn-sm" href="#!">view project</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- /projet -->
-
-  <!-- blog -->
-  <section class="section">
-    <div class="container">
-      <div class="row">
-        <div class="col-12 text-center">
-          <h2 class="section-title">Blogs</h2>
-        </div>
-        <div class="col-lg-4 col-sm-6 mb-4 mb-lg-0">
-          <article class="card shadow">
-            <img class="rounded card-img-top" src="images/blog/post-3.jpg" alt="post-thumb">
-            <div class="card-body">
-              <h4 class="card-title"><a class="text-dark" href="blog-single.php">Amazon increase income 1.5 Million</a>
-              </h4>
-              <p class="cars-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                incididunt ut labore et
-                dolore magna aliqua.</p>
-              <a href="blog-single.php" class="btn btn-xs btn-primary">Read More</a>
-            </div>
-          </article>
-        </div>
-        <div class="col-lg-4 col-sm-6 mb-4 mb-lg-0">
-          <article class="card shadow">
-            <img class="rounded card-img-top" src="images/blog/post-4.jpg" alt="post-thumb">
-            <div class="card-body">
-              <h4 class="card-title"><a class="text-dark" href="blog-single.php">Amazon increase income 1.5 Million</a>
-              </h4>
-              <p class="cars-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                incididunt ut labore et
-                dolore magna aliqua.</p>
-              <a href="blog-single.php" class="btn btn-xs btn-primary">Read More</a>
-            </div>
-          </article>
-        </div>
-        <div class="col-lg-4 col-sm-6 mb-4 mb-lg-0">
-          <article class="card shadow">
-            <img class="rounded card-img-top" src="images/blog/post-2.jpg" alt="post-thumb">
-            <div class="card-body">
-              <h4 class="card-title"><a class="text-dark" href="blog-single.php">Amazon increase income 1.5 Million</a>
-              </h4>
-              <p class="cars-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                incididunt ut labore et
-                dolore magna aliqua.</p>
-              <a href="blog-single.php" class="btn btn-xs btn-primary">Read More</a>
-            </div>
-          </article>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- /blog -->
 
   <?php
   require_once "footer.php";

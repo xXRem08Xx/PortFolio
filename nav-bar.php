@@ -33,7 +33,6 @@
         </li>
         <!-- fin sous menu Boite a outils-->
 
-
         <!-- sous menu Projets-->
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarProjetLink" role="button" data-mdb-toggle="dropdown" aria-expanded="false">

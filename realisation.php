@@ -4,6 +4,7 @@
 <?php
 $title = "Réalisation";
 require_once "./header.php";
+include_once "bdd_connexion.php";
 require_once "./function.php";
 ?>
 
