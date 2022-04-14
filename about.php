@@ -2,7 +2,7 @@
 <html lang="fr">
 
 <?php
-$title = "A Propos de moi";
+$title = "Qui suis-je";
 include_once "header.php";
 ?>
 
@@ -17,7 +17,7 @@ include_once "header.php";
   <div class="container">
     <div class="row">
       <div class="col-12">
-        <h1 class="text-white font-tertiary">A Propos de Moi</h1>
+        <h1 class="text-white font-tertiary">Qui suis-je ?</h1>
       </div>
     </div>
   </div>
@@ -39,7 +39,21 @@ include_once "header.php";
         <p>Étudiant en BTS SIO 🤓, je me forme pour acquérir des compétences dans le domaine du Web design et de la programmation 
           Logiciel 🖥️ afin de pouvoir entrer dans la vie active.</p>
           <p>Passionné par l'intelligence artificiel 😍 et les jeux vidéo 🎮, je souhaite m'orienter dans un domaine permettant de regrouper et de pratiquer les 2 activités. 💪</p>
-          <p></p>
+          <p>Je suis également un grand lecteur, et mes themes de livre preferé sont :
+            <ul>
+              <li>Fantasy (voyage dans le temps, dans d'autre univers ...)</li>
+              <li>Science-Fiction (Monde virtuel, Mythologie)</li>
+              <li>Manga (y'a rien a dire de plus sur ce theme 😉)</li>
+            </ul>
+          </p>
+          <p>
+            Mes collections de livre preferé sont :
+            <ul>
+              <li>La guerre des clans, de Erin Hunter</li>
+              <li>Les fourmis, de Bernard Werber</li>
+              <li>La trilogie des Dieux, de Bernard Werber</li>
+            </ul>
+          </p>
       </div>
       <div class="col-md-4 text-center drag-lg-top">
         <div class="shadow-down mb-4">

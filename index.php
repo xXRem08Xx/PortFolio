@@ -22,13 +22,16 @@ include_once "header.php";
             <a class="nav-link" href="index.php">Accueil</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="about.php">A Propos</a>
+            <a class="nav-link" href="about.php">Qui suis-je</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="projet.php">Projet</a>
+            <a class="nav-link" href="realisation.php">Projet</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="contact.php">Contact</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="test.php">Test</a>
           </li>
         </ul>
       </div>

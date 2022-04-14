@@ -15,9 +15,16 @@
 
   <!-- Favicon -->
   <link rel="shortcut icon" type="image/x-icon" href="images/favicon.png" />
-  
+
   <!-- ** Plugins nécessaires pour le site ** -->
   <!-- Bootstrap -->
+
+  <!-- à rajouter pour les sous menus -->
+
+  <!-- à rajouter pour les sous menus -->
+
+
+
   <link rel="stylesheet" href="plugins/bootstrap/bootstrap.min.css">
   <!-- slick slider -->
   <link rel="stylesheet" href="plugins/slick/slick.css">
@@ -28,7 +35,7 @@
   <link href="css/style.css" rel="stylesheet">
 
   <?php
-    include_once "bdd_connexion.php";
+  include_once "bdd_connexion.php";
   ?>
 
 
