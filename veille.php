@@ -37,9 +37,8 @@ require_once "./function.php";
 
     <section class="section">
         <div class="container">
-            <div class="row">
-
-            </div>
+                <script src="https://apps.elfsight.com/p/platform.js" defer></script>
+                <div class="elfsight-app-db2032f1-34d9-4629-a495-cae5eb82f4f0"></div>
         </div>
     </section>
 
