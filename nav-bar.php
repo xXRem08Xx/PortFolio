@@ -24,6 +24,9 @@
               <a class="dropdown-item" href="boite-c++.php">Dévellopement C++</a>
             </li>
             <li>
+            <a class="dropdown-item" href="boite-qt.php">Dévellopement Qt</a>
+            </li>
+            <li>
               <a class="dropdown-item" href="boite-web.php">Dévellopement Web</a>
             </li>
             <li>

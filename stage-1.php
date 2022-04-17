@@ -96,7 +96,6 @@ require_once "./function.php";
                         <h4><strong>Travail Effectué</strong></h4>
                         <p>
 
-
                         <h5>Réalisation de la maquette</h5>
 
                         <p>
@@ -132,10 +131,17 @@ require_once "./function.php";
                                 <li class="list-group-item">WpForms lite, pour la creation des formulaires.</li>
                             </ul>
                         </div>
-
                         </p>
+
+                        <hr style="background-color: #41228e;">
+
+                        <p style="text-align: center;">
+                            Je tient a remercier Léo pour m'avoir offert la possibilité d'effectué mon stage dans son entreprise et de m'avoir fait confiance.😁😘
+                            <br>
+                            Je remercie egalement Jordanne pour m'avoir accompagné tous au long de ce stage, et de m'avoir aidé quand j'ai rencontré des difficultées. 💖
                         </p>
                     </section>
+
                 </body>
 
                 </html>
