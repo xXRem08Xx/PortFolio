@@ -277,19 +277,19 @@ require_once "function.php";
                                 </div>
                                 <!-- Contenu de l'onglet Les Tableaux -->
                                 <div class=" tab-pane fade" id="o3" role="tabpanel" aria-labelledby="onglet3">
-
+                                En cours de création !
                                 </div>
                                 <!-- Contenu de l'onglet Les Structures -->
                                 <div class="tab-pane fade" id="o4" role="tabpanel" aria-labelledby="onglet4">
-
+                                En cours de création !
                                 </div>
                                 <!-- Contenu de l'onglet Les Pointeurs -->
                                 <div class="tab-pane fade" id="o5" role="tabpanel" aria-labelledby="onglet5">
-
+                                En cours de création !
                                 </div>
                                 <!-- Contenu de l'onglet Les Classes -->
                                 <div class="tab-pane fade" id="o6" role="tabpanel" aria-labelledby="onglet6">
-
+                                En cours de création !
                                 </div>
 
                             </div>

@@ -96,19 +96,19 @@ require_once "./function.php";
 					<p>
 						Cette partie est celle qui a nécessité le plus de temps d'investissement, notamment en termes de recherche et de lecture de documentation.
 						<br>
-						La première idée que l'on a mise en œuvre a été celle d'utiliser <a href="https://www.integromat.com/en">IntegroMath</a>, un service en ligne permettant de gérer et de programmer des taches,
+						La première idée que l'on a mise en œuvre a été celle d'utiliser <a href="https://www.integromat.com/en" target="_blank">IntegroMath</a>, un service en ligne permettant de gérer et de programmer des taches,
 						grâce a l'utilisation d'API.
 						<br>
 						Par exemple, on peut programmer que lorsqu'on recoit un mail d'une certainne personne, ce mail est rangé dans un dossier de la boite mail et une notification nous est envoyée.
 						<br>
 						Nous avions pour idée de nous servir de ce service afin de programmer l'exécution mensuelle d'un call API a celle de Facebook et Instagram, afin de récupérer le contenu de ces calls et de les stocker.
 						<br>
-						Cependant, l'API Facebook est complexe, et j'ai trouvé dans la foulée un autre service web génial, nommé <a href="https://www.dataddo.com">Dataddo</a>, qui permet de récupérer les données depuis une ou plusieurs sources et de les transférer dans un fichier ou service externe, tel un fichier google sheet ou une base de données.
+						Cependant, l'API Facebook est complexe, et j'ai trouvé dans la foulée un autre service web génial, nommé <a href="https://www.dataddo.com" target="_blank">Dataddo</a>, qui permet de récupérer les données depuis une ou plusieurs sources et de les transférer dans un fichier ou service externe, tel un fichier google sheet ou une base de données.
 						<br>
 						En profitant de cet outils, nous avons stocké toute les données de tous les comptes facebook et instagram depuis leurs creation, et nous les avons tranféré dans un Google Sheet créé pour l'occasion. (Le fichier fait alors plus de 10 000 lignes par onglet, sur plusieurs onglets)
 						<br>
 						<br>
-						Ce service étants payant à la fin de la période d'essai, nous avons opté pour un autre service web nommé <a href="https://www.zoho.com/fr/">Zoho</a> proposant une partie gratuite, et proposant une formule similaire, mais dans un fichier créé à chaque fois, obligeant l'action de copier le contenu du fichier et de le coller dans notre propre fichier adapté pour l'occasion.
+						Ce service étants payant à la fin de la période d'essai, nous avons opté pour un autre service web nommé <a href="https://www.zoho.com/fr/" target="_blank">Zoho</a> proposant une partie gratuite, et proposant une formule similaire, mais dans un fichier créé à chaque fois, obligeant l'action de copier le contenu du fichier et de le coller dans notre propre fichier adapté pour l'occasion.
 						<br>
 
 					<h6><strong>Compte Rendu :</strong></h6>

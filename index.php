@@ -8,7 +8,7 @@ include_once "header.php";
 
 <body>
 
-<?php
+  <?php
   require_once "./nav-bar.php";
   ?>
   <!-- /nav bar -->
@@ -51,10 +51,8 @@ include_once "header.php";
     </div>
     <!-- icone de reseau social -->
     <ul class="list-unstyled ml-5 mt-3 position-relative zindex-1">
-      <li class="mb-3"><a class="text-white" href="#"><i class="ti-facebook"></i></a></li>
-      <li class="mb-3"><a class="text-white" href="#"><i class="ti-instagram"></i></a></li>
-      <li class="mb-3"><a class="text-white" href="#"><i class="ti-dribbble"></i></a></li>
-      <li class="mb-3"><a class="text-white" href="#"><i class="ti-twitter"></i></a></li>
+      <li class="mb-3"><a class="text-white" href="https://github.com/xXRem08Xx" target="_blank"><i class="ti-github"></i></a></li>
+
     </ul>
     <!-- /icone de reseau social -->
   </section>
@@ -69,8 +67,8 @@ include_once "header.php";
             Actuellement en BTS SIO (Services informatiques aux organisations),
           </p>
           <p class="font-secondary paragraph-lg text-dark">
-            je me forme pour acquerir des competences dans le domaine du Web design et de la programation Logiciel afin de pouvoir entrer dans la vie
-            active au seins d'une entreprise.
+            Je me forme pour acquérir des compétences dans le domaine du Web design et de la programmation Logiciel afin de pouvoir entrer dans la vie
+            active au sein d'une entreprise.
           </p>
           <a href="about.php" class="btn btn-transparent">En Savoir Plus</a>
         </div>
@@ -102,7 +100,7 @@ include_once "header.php";
               <div class="wave" data-progress="73%"></div>
             </div>
             <div class="card-footer bg-white">
-              <h4 class="card-title">Devellopement C++ (73%)</h4>
+              <h4 class="card-title">Developpement C++ (73%)</h4>
             </div>
           </div>
         </div>
@@ -122,7 +120,7 @@ include_once "header.php";
               <div class="wave" data-progress="35%"></div>
             </div>
             <div class="card-footer bg-white">
-              <h4 class="card-title">Dévellopement JavaScript (35%)</h4>
+              <h4 class="card-title">Développement JavaScript (35%)</h4>
             </div>
           </div>
         </div>
@@ -165,7 +163,7 @@ include_once "header.php";
     <div class="container">
       <div class="row">
         <div class="col-lg-12 text-center">
-          <h2 class="section-title">Parcourt</h2>
+          <h2 class="section-title">Parcours</h2>
         </div>
         <div class="col-lg-6 col-md-6 mb-80">
           <div class="d-flex">
@@ -210,7 +208,7 @@ include_once "header.php";
           <div class="card hover-shadow shadow">
             <div class="card-body text-center px-4 py-5">
               <i class="ti-palette icon mb-5 d-inline-block"></i>
-              <h4 class="mb-4">Base de données.</h4>
+              <h4 class="mb-4">Base de données</h4>
               <p>Création, gestion et organisation de base de données, maitrise du language SQL</p>
             </div>
           </div>

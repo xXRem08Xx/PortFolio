@@ -79,6 +79,10 @@ h6,
 }
 
 /* Button style */
+.ripple-surface {
+  min-width: 50px;
+}
+
 .btn {
   font-size: 22px;
   font-family: "Playfair Display", serif;

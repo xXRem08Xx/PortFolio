@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : sam. 16 avr. 2022 à 21:35
+-- Généré le : mar. 19 avr. 2022 à 23:07
 -- Version du serveur :  5.7.31
 -- Version de PHP : 7.3.21
 
@@ -44,10 +44,14 @@ INSERT INTO `appartient` (`numeroMotCle`, `numeroDocument`) VALUES
 (1, 4),
 (1, 5),
 (1, 6),
+(1, 8),
 (2, 1),
 (2, 3),
+(2, 7),
 (3, 1),
+(3, 7),
 (4, 1),
+(4, 7),
 (5, 4);
 
 -- --------------------------------------------------------
@@ -90,14 +94,16 @@ CREATE TABLE IF NOT EXISTS `contact` (
   `message` varchar(2000) NOT NULL,
   `datePost` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`idContact`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `contact`
 --
 
 INSERT INTO `contact` (`idContact`, `nom_prenom`, `mail`, `message`, `datePost`) VALUES
-(1, 'remi maissa', 'maissa.rem08@gmail.com', 'Salut, je test ma base de données !', '2022-04-14 23:55:23');
+(1, 'remi maissa', 'maissa.rem08@gmail.com', 'Salut, je test ma base de données !', '2022-04-14 23:55:23'),
+(2, 'Maïssa Remi', 'maissa.rem08@gmail.com', 'Salut, c\'est moi !', '2022-04-16 23:55:50'),
+(3, 'Maïssa Remi', 'maissa.rem08@gmail.com', 'cc', '2022-04-17 00:12:03');
 
 -- --------------------------------------------------------
 
@@ -110,23 +116,25 @@ CREATE TABLE IF NOT EXISTS `document` (
   `numeroDocument` int(11) NOT NULL AUTO_INCREMENT,
   `titreProjet` varchar(50) DEFAULT NULL,
   `lien` varchar(1000) DEFAULT NULL,
-  `dateInsertion` date DEFAULT NULL,
+  `dateInsertion` datetime DEFAULT CURRENT_TIMESTAMP,
   `description` varchar(2000) DEFAULT NULL,
   `lienImage` varchar(200) NOT NULL,
   `lien_publication` varchar(1000) DEFAULT NULL,
   PRIMARY KEY (`numeroDocument`)
-) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `document`
 --
 
 INSERT INTO `document` (`numeroDocument`, `titreProjet`, `lien`, `dateInsertion`, `description`, `lienImage`, `lien_publication`) VALUES
-(1, 'Inscription des Producteurs', 'https://docs.google.com/document/d/1B2SWLEST26TSzouq9gkdH6OU3-tfrY2wssOfPZMiTM8/edit#', '2022-03-28', 'Ceci est la deuxième partie du projet NewWorld, où nous avons pour objectif de créer un formulaire d\'inscription,<br/>\r\nafin que les producteurs puisse d\'inscrire, en sécurisant au maximum les champs de saisie, et les valeurs rentrées. <br/> Des contraintes tel que l\'auto-complétion des code postal et des adresse via la base de données de l\'état ont été mise en place.', 'inscription-producteur.png', 'https://docs.google.com/document/d/e/2PACX-1vQOl4X8GPZ6W7aLWxVtC_BQMoJZXp6bhXRa65WKGjCYBd1f40M10ruqCVDDaBKgrNtRhCTcWlxwSWvy/pub?embedded=true'),
-(3, 'NewWorld Circuit Court', 'https://docs.google.com/document/d/1HorzfWplSx84AVCPDvZkDgu832t_Y6uvpQHbTd73blY/edit#heading=h.7oayvxboxfnc', '2022-03-28', 'C\'est la première activité du projet NewWorld,un projet de classe important.<br/>\r\nNous voulons créer une application capable de générer un PDF contenant tous les produits (fruits, légumes, viande, autres…) qui sont proposés par un producteur identifié par son id dans la base de données.', 'circuit-court.png', 'https://docs.google.com/document/d/e/2PACX-1vQHc6uRjDg9rKWmpQzVSFgw8CW3ZbbfjgCAKGPBdj4TUi_B697tRyCM-uUTLoflBA5-S3XG8vj6W-4O/pub?embedded=true'),
-(4, 'FireWall', 'https://docs.google.com/document/d/1H8N7gvsaANqJR9FY-wPZaLl3bwY9rk4HFDZL-9TSUFo/edit#heading=h.df45siibnle8', '2022-03-29', 'C\'est une application ayant pour rôle d\'administrer automatiquement les connexions externes.<br/>\r\nElle enregistre toute les IP tentant de se connecter et qui ont échoué, et si cette même IP échoue 3 fois ou plus, elle est bloqué.<br/>\r\nElle sera débloquée automatiquement si elle se connecte au minimum 5 minutes plus tard.<br/>\r\n\r\nUne interface graphique permet de suivre les IP échouant, et permet de les débloquer manuellement même si les 5 minutes ne sont pas passées.', 'firewall.jpg', 'https://docs.google.com/document/d/e/2PACX-1vR8X71vV1lo9la_JOqkhDIS0v94152AoffBhBx7Q93IJgeh_FzMQ_gsvmxlFUuJUDf4zZaBzG-kuxFt/pub?embedded=true'),
-(5, 'Évaluation De Multiplication', 'https://docs.google.com/document/d/1uVQMx03pf-cYBEtAMP3TrdqasaYP5wCeHdyPrsfhaNg/edit#heading=h.9fx6kvbuo4k7', '2022-03-29', 'C\'est un programme générant une interface graphique qui vous posera des questions sur les tables de multiplications.<br/>\r\n\r\nVous pouvez indiquer le nombre de questions que vous voulez, ainsi que la table que vous souhaitez faire en particulier si vous en avez envie.<br/>\r\n\r\nCe programme n\'est pas complet, car ne comporte pas de vérification de saisie dans les fenêtres de dialogues.', 'table-multiplication.jpg', 'https://docs.google.com/document/d/e/2PACX-1vT2vhI7igRVrHi81FheVXAuk0ko_4k-oVzBl-NkVHRw7_L9fBCy_edzk_k-e73MVjBMhahQwZKVKX1c/pub?embedded=true'),
-(6, 'Évaluation Comparaison', 'https://docs.google.com/document/d/1IuluiB0Q6qpSE7kNh6C15mDW8qYzNLFY4ZBhDRNV5m4/edit', '2022-03-29', 'C\'est un programme générant une interface graphique soumettant 2 nombres, et l\'utilisateur doit choisir si le premier nombre est plus grand, égal ou plus petit que le second nombre.', 'comparaison.jpg', 'https://docs.google.com/document/d/e/2PACX-1vRp6xCY6mi48CH1NnAEFB8eR4K4NP7LTS1aKPcuGdCYS4XrYSLd5VycXeKMLSiy7MTRxfF18wBLi4jm/pub?embedded=true');
+(1, 'Inscription des Producteurs', 'https://docs.google.com/document/d/1B2SWLEST26TSzouq9gkdH6OU3-tfrY2wssOfPZMiTM8/edit#', '2022-03-28 00:00:00', 'Ceci est la deuxième partie du projet NewWorld, où nous avons pour objectif de créer un formulaire d\'inscription,<br/>\r\nafin que les producteurs puisse d\'inscrire, en sécurisant au maximum les champs de saisie, et les valeurs rentrées. <br/> Des contraintes tel que l\'auto-complétion des code postal et des adresse via la base de données de l\'état ont été mise en place.', 'inscription-producteur.png', 'https://docs.google.com/document/d/e/2PACX-1vQOl4X8GPZ6W7aLWxVtC_BQMoJZXp6bhXRa65WKGjCYBd1f40M10ruqCVDDaBKgrNtRhCTcWlxwSWvy/pub?embedded=true'),
+(3, 'NewWorld Circuit Court', 'https://docs.google.com/document/d/1HorzfWplSx84AVCPDvZkDgu832t_Y6uvpQHbTd73blY/edit#heading=h.7oayvxboxfnc', '2022-03-28 00:00:00', 'C\'est la première activité du projet NewWorld,un projet de classe important.<br/>\r\nNous voulons créer une application capable de générer un PDF contenant tous les produits (fruits, légumes, viande, autres…) qui sont proposés par un producteur identifié par son id dans la base de données.', 'circuit-court.png', 'https://docs.google.com/document/d/e/2PACX-1vQHc6uRjDg9rKWmpQzVSFgw8CW3ZbbfjgCAKGPBdj4TUi_B697tRyCM-uUTLoflBA5-S3XG8vj6W-4O/pub?embedded=true'),
+(4, 'FireWall', 'https://docs.google.com/document/d/1H8N7gvsaANqJR9FY-wPZaLl3bwY9rk4HFDZL-9TSUFo/edit#heading=h.df45siibnle8', '2022-03-29 00:00:00', 'C\'est une application ayant pour rôle d\'administrer automatiquement les connexions externes.<br/>\r\nElle enregistre toute les IP tentant de se connecter et qui ont échoué, et si cette même IP échoue 3 fois ou plus, elle est bloqué.<br/>\r\nElle sera débloquée automatiquement si elle se connecte au minimum 5 minutes plus tard.<br/>\r\n\r\nUne interface graphique permet de suivre les IP échouant, et permet de les débloquer manuellement même si les 5 minutes ne sont pas passées.', 'firewall.jpg', 'https://docs.google.com/document/d/e/2PACX-1vR8X71vV1lo9la_JOqkhDIS0v94152AoffBhBx7Q93IJgeh_FzMQ_gsvmxlFUuJUDf4zZaBzG-kuxFt/pub?embedded=true'),
+(5, 'Évaluation De Multiplication', 'https://docs.google.com/document/d/1uVQMx03pf-cYBEtAMP3TrdqasaYP5wCeHdyPrsfhaNg/edit#heading=h.9fx6kvbuo4k7', '2022-03-29 00:00:00', 'C\'est un programme générant une interface graphique qui vous posera des questions sur les tables de multiplications.<br/>\r\n\r\nVous pouvez indiquer le nombre de questions que vous voulez, ainsi que la table que vous souhaitez faire en particulier si vous en avez envie.<br/>\r\n\r\nCe programme n\'est pas complet, car ne comporte pas de vérification de saisie dans les fenêtres de dialogues.', 'table-multiplication.jpg', 'https://docs.google.com/document/d/e/2PACX-1vT2vhI7igRVrHi81FheVXAuk0ko_4k-oVzBl-NkVHRw7_L9fBCy_edzk_k-e73MVjBMhahQwZKVKX1c/pub?embedded=true'),
+(6, 'Évaluation Comparaison', 'https://docs.google.com/document/d/1IuluiB0Q6qpSE7kNh6C15mDW8qYzNLFY4ZBhDRNV5m4/edit', '2022-03-29 00:00:00', 'C\'est un programme générant une interface graphique soumettant 2 nombres, et l\'utilisateur doit choisir si le premier nombre est plus grand, égal ou plus petit que le second nombre.', 'comparaison.jpg', 'https://docs.google.com/document/d/e/2PACX-1vRp6xCY6mi48CH1NnAEFB8eR4K4NP7LTS1aKPcuGdCYS4XrYSLd5VycXeKMLSiy7MTRxfF18wBLi4jm/pub?embedded=true'),
+(7, 'Atlantik 2', 'https://docs.google.com/document/d/1BjAzIA0wa4eRDhADPJl0nk4F6X822vbNCvwXCsf3Fzg/edit', '2022-04-19 23:55:30', 'C\'est la deuxieme partie de l\'exercice portant sur la compagnie Atlantik, qui vise a recuperer les informations d\'une base de données et de les afficher dans des tableaux dont la disposition est donné dans la feuille de l\'exercice <a href=\"https://docs.google.com/document/d/e/2PACX-1vQlO_Vej4IiFTSUIKczUGWdgOUVWUSPZTHcFZS-u7OgWMb3bQoCFDZp7ySsXHWHV8N_kpy9XKDaBLpU/pub\" target=\"_blank\"> ici </a>', 'atlantik_2.jpg', 'https://docs.google.com/document/d/e/2PACX-1vR1q6BJWxY_CA4z9iVDFsC1nhur73-xzx7KtsWgWBTvWw6rf1kifukzsjhpwQ3_6MxIV3xBL-lQcN8i/pub?embedded=true'),
+(8, 'Devis Piece', 'https://docs.google.com/document/d/1znkXBaNZlE9bjeFdbsqNNkQvG-QEc2IrWsek-MW8TjY/edit', '2022-04-20 00:08:30', 'Ce projet vise a créer une application Qt permettant de gérer des pièces (Ajouter, supprimer, ... ) et de calculer automatiquement le total du volume en m² de toutes les pièces.', 'devis_piece.jpg', 'https://docs.google.com/document/d/e/2PACX-1vQMsYGbzveOszNwEPKZL6pOFVWCMIWzmuEhyuZOKzi2Bn0hBI8l7rKRHoKAPfxyF2v9DLgWxWSY9Ss9/pub?embedded=true');
 
 -- --------------------------------------------------------
 

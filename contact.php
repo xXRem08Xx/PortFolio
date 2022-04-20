@@ -61,7 +61,7 @@ include_once "header.php";
                 <textarea name="message" id="message" class="form-control px-0 mb-4" maxlength="2000" placeholder="Tape ton message ici !" required></textarea>
               </div>
               <div class="col-lg-6 col-10 mx-auto">
-                <button class="btn btn-primary w-100">Envoyer</button>
+                <input class="btn btn-primary w-100" value="Envoyer" type="submit">
               </div>
             </form>
           </div>
