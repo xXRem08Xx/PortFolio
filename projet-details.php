@@ -132,17 +132,21 @@ if (isset($_GET['idProjet']) && !empty($_GET['idProjet'])) {
           //on verifie si le message comporte au moins 2 caracteres
           if (strlen($message) < 2) {
             $messageError = "Attention, vous devez remplir le message avec au moins 2 caractères";
+            $boolErrorForm = true;
           }
           //si on a trouver les balises dans le message
           else if ($boolMessageBaliseEntree || $boolMessageBaliseFermer) {
+            $boolErrorForm = true;
             $messageError = "Attention, l'utilisation des chevrons est interdit !' est interdit ! --> Champ Message";
           }
           //si on a trouver les balises dans le nom ou le prenom
           else if ($boolNomBaliseEntree || $boolNomBaliseFermer) {
+            $boolErrorForm = true;
             $messageError = "Attention, l'utilisation des chevrons est interdit ! --> Champ Nom / Prenom";
           }
           //si on a trouver les balises dans le nom ou le prenom
           else if ($boolEmailBaliseEntree || $boolEmailBaliseFermer) {
+            $boolErrorForm = true;
             $messageError = "Attention, l'utilisation des chevrons est interdit ! --> Champ Mail";
           }
           //si le message comporte plus de 2 caracteres on insere

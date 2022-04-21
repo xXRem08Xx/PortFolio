@@ -87,10 +87,10 @@ include_once "header.php";
         <div class="col-lg-3 col-sm-6 mb-4 mb-lg-0">
           <div class="card shadow text-center">
             <div class="position-relative rounded-top progress-wrapper" data-color="#fdb157">
-              <div class="wave" data-progress="60%"></div>
+              <div class="wave" data-progress="65%"></div>
             </div>
             <div class="card-footer bg-white">
-              <h4 class="card-title">Conception Web (60%)</h4>
+              <h4 class="card-title">Conception Web (65%)</h4>
             </div>
           </div>
         </div>
@@ -117,10 +117,10 @@ include_once "header.php";
         <div class="col-lg-3 col-sm-6 mb-4 mb-lg-0">
           <div class="card shadow text-center">
             <div class="position-relative rounded-top progress-wrapper" data-color="#ffbcaa">
-              <div class="wave" data-progress="35%"></div>
+              <div class="wave" data-progress="45%"></div>
             </div>
             <div class="card-footer bg-white">
-              <h4 class="card-title">Développement JavaScript (35%)</h4>
+              <h4 class="card-title">Développement JavaScript (45%)</h4>
             </div>
           </div>
         </div>
