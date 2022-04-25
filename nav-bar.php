@@ -1,4 +1,4 @@
-<header class="navigation fixed-top">
+<header class="navigation fixed-top" style="max-width: 100vw;">
   <nav class="navbar navbar-expand-lg navbar-dark">
     <a class="navbar-brand font-tertiary h3" href="index.php"><img src="images/logo.png" alt="Myself"></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
