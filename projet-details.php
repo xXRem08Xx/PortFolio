@@ -7,6 +7,10 @@ if (isset($_GET['idProjet']) && !empty($_GET['idProjet'])) {
   include "header.php";
   require_once "./bdd_connexion.php";
 
+
+
+
+  
   $requete = "SELECT `numeroDocument`, `titreProjet`, `lien`, `dateInsertion`, `description`, `lien_publication` FROM `document` WHERE `numeroDocument` = " . $idDocument;
   $resultat = $pdo->query($requete);
   $resultat = $resultat->fetchAll();
