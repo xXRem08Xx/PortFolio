@@ -125,6 +125,7 @@ include_once "header.php";
           </div>
         </div>
       </div>
+    </div>
   </section>
   <!-- /Competences -->
 
@@ -190,7 +191,6 @@ include_once "header.php";
           </div>
         </div>
       </div>
-    </div>
     </div>
     <!-- bg image -->
     <img class="img-fluid edu-bg-image w-100" src="images/backgrounds/education-bg.png" alt="bg-image">

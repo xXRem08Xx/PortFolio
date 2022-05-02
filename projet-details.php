@@ -63,7 +63,7 @@ if (isset($_GET['idProjet']) && !empty($_GET['idProjet'])) {
                     <div class="d-flex align-items-start bg-light mb-3" style="height: 30vh; font-size: 20px; line-height: 30px;">
                       <br>
                       <?php echo $description; ?>
-                      </br>
+                      <br>
                     </div>
                   </div>
                 </div>

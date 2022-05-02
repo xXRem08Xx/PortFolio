@@ -130,8 +130,8 @@ require_once "./function.php";
 						<br>
 						Vient la partie où je dois organiser les données pour les rendre plus claires, et permettre de le faire automatiquement pour que les données rajoutées chaque mois soient prisent en compte. <br>
 					</p>
+					C'est pourquoi j'ai pensé à 2 solutions :
 					<ul class="list-group list-group-flush">
-						C'est pourquoi j'ai pensé à 2 solutions :
 						<li class="list-group-item">
 							Faire un graphique directement sur le fichier Google Sheet
 						</li>
@@ -149,7 +149,7 @@ require_once "./function.php";
 						<br>
 						Cette fonction permet de récupérer la chaîne de caractère comprise entre 2 caractères indiqués (ici 🛍):
 					<div style="border: 1px solid silver;background-color: lightgray;display: inline-block;">
-						=SI(OU(C2="";STXT(C2;1;2)<>"🛍");"";STXT(SI(NBCAR(C2)-NBCAR(SUBSTITUE(C2;"🛍";""))<2;"";SUPPRESPACE(STXT(C2;TROUVE("🛍";C2)+1;TROUVE("🛍";C2;TROUVE("🛍";C2)+1)-TROUVE("🛍";C2)-1)));3;NBCAR(C2))) </div>
+						=SI(OU(C2="";STXT(C2;1;2)&lt;&gt;"🛍");"";STXT(SI(NBCAR(C2)-NBCAR(SUBSTITUE(C2;"🛍";""))&lt;2;"";SUPPRESPACE(STXT(C2;TROUVE("🛍";C2)+1;TROUVE("🛍";C2;TROUVE("🛍";C2)+1)-TROUVE("🛍";C2)-1)));3;NBCAR(C2))) </div>
 
 								</p>
 								<br>

@@ -50,7 +50,7 @@ function generationCardProjet()
 
     $divCard = $divMotCle . '
         <div class="position-relative rounded hover-wrapper">
-          <img src="images/projet/' . $lienImage . '" alt="portfolio-image" class="img-fluid rounded w-100 d-block" style="")>
+          <img src="images/projet/' . $lienImage . '" alt="portfolio-image" class="img-fluid rounded w-100 d-block" />
           <div class="hover-overlay">
             <div class="hover-content">
               <h4> ' . $doc["titreProjet"] . '</h4>

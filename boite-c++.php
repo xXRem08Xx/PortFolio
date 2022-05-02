@@ -132,21 +132,24 @@ require_once "function.php";
                                             On créé un tableau de char :
                                             <br>
                                             <div style="border: 1px solid silver;background-color: lightgray;display: inline-block;">
-                                                char Nom_du_tableau[Nombre_d_elements]
-                                                <br>
-                                                <br>
-                                                Exemple :
-                                                <br>
-                                                char Chaine[20+1];<br>
+                                                
 
-                                                Chaine[0]= 'B';<br>
-                                                Chaine[1]= 'o';<br>
-                                                Chaine[2]= 'n';<br>
-                                                Chaine[3]= 'j';<br>
-                                                Chaine[4]= 'o';<br>
-                                                Chaine[5]= 'u';<br>
-                                                Chaine[6]= 'r';<br>
-                                                Chaine[7]= '\0';<br>
+                                                    char Nom_du_tableau[Nombre_d_elements]
+                                                    <br>
+                                                    <br>
+                                                    Exemple :
+                                                    <br>
+                                                    char Chaine[20+1];<br>
+
+                                                    Chaine[0]= 'B';<br>
+                                                    Chaine[1]= 'o';<br>
+                                                    Chaine[2]= 'n';<br>
+                                                    Chaine[3]= 'j';<br>
+                                                    Chaine[4]= 'o';<br>
+                                                    Chaine[5]= 'u';<br>
+                                                    Chaine[6]= 'r';<br>
+                                                    Chaine[7]= '\0';<br>
+                                                
                                             </div>
                                         </li>
                                         <li class="list-group-item">
@@ -177,23 +180,32 @@ require_once "function.php";
                                         mais doivent être déclarées avant leur utilisation.
                                         <br>
                                     <div style="border: 1px solid silver;background-color: lightgray;display: inline-block;">
-                                        int i; // déclaré mais non initialisé<br>
-                                        char c;<br>
-                                        int i, j, k; // Déclaration multiple<br>
+                                        
+
+                                            int i; // déclaré mais non initialisé<br>
+                                            char c;<br>
+                                            int i, j, k; // Déclaration multiple<br>
+                                        
                                     </div>
                                     <br>
                                     <br>
                                     L'initialisation consiste à attribuer une valeur à une variable déjà déclarée, <br>
                                     <div style="border: 1px solid silver;background-color: lightgray;display: inline-block;">
-                                        int i; // déclaration<br>
-                                        i = 10; // initialisation<br>
+                                        
+
+                                            int i; // déclaration<br>
+                                            i = 10; // initialisation<br>
+                                        
                                     </div>
                                     <br>
                                     <br>
                                     L'initialisation et la déclaration peuvent également être effectuées en une seule étape, <br>
                                     <div style="border: 1px solid silver;background-color: lightgray;display: inline-block;">
-                                        int i=10; //initialisation et déclaration dans la même étape<br>
-                                        int i=10, j=11;<br>
+                                        
+
+                                            int i=10; //initialisation et déclaration dans la même étape<br>
+                                            int i=10, j=11;<br>
+                                        
                                     </div>
                                     <br>
                                     <br>
@@ -201,10 +213,13 @@ require_once "function.php";
                                     De même, si une variable est déclarée une fois et que l'on essaie de la déclarer à nouveau, on obtiendra une erreur de compilation.
                                     <br>
                                     <div style="border: 1px solid silver;background-color: lightgray;display: inline-block;">
-                                        int i,j;<br>
-                                        i=10;<br>
-                                        j=20;<br>
-                                        int j=i+j; //erreur de compilation, ne peut pas redéclarer une variable dans la même portée<br>
+                                        
+
+                                            int i,j;<br>
+                                            i=10;<br>
+                                            j=20;<br>
+                                            int j=i+j; //erreur de compilation, ne peut pas redéclarer une variable dans la même portée<br>
+                                        
                                     </div>
                                     </p>
 
@@ -222,17 +237,20 @@ require_once "function.php";
                                         Exemple :
                                         <br>
                                     <div style="border: 1px solid silver;background-color: lightgray;display: inline-block;">
-                                        include "iostream"<br>
-                                        using namespace std;<br>
-                                        int x; // Variable globale déclarée<br>
-                                        int main()<br>
-                                        {<br>
-                                        x=10; // Initialisé une seule fois<br>
-                                        cout <<"first value of x="<< x;<br>
-                                        x=20;                 // Initialisé à nouveau<br>
-                                        cout <<" Initialized again with value="<< x;<br>
-                                        }<br>
-                                    </div>
+                                        
+
+                                            include "iostream"<br>
+                                            using namespace std;<br>
+                                            int x; // Variable globale déclarée<br>
+                                            int main()<br>
+                                            {<br>
+                                            x=10; // Initialisé une seule fois<br>
+                                            cout &lt;&lt;"first value of x="&lt;&lt; x;<br>
+                                            x=20;                 // Initialisé à nouveau<br>
+                                        cout &lt;&lt;" Initialized again with value="&lt;&lt; x;<br>
+                                    }<br>
+                                
+                                </div>
                                     </p>
                                     <br>
                                     <h4>Les Variables locales</h4>
@@ -245,17 +263,20 @@ require_once "function.php";
                                     Exemple :
                                     <br>
                                     <div style=" border: 1px solid silver;background-color: lightgray;display: inline-block;">
-                                            include "iostream"<br>
-                                            using namespace std;<br>
-                                            int main()<br>
-                                            {<br>
-                                            int i=10;<br>
-                                            if( i < 20) // si la condition est vrai<br>
-                                                {<br>
-                                                int n=100; // Variable locale déclarée et initialisée<br>
-                                                } // fin de la fonction if<br>
-                                                cout << n; // Erreur de compilation, n non disponible ici<br>
-                                                    }<br>
+                                                
+                                                    include "iostream"<br>
+                                                    using namespace std;<br>
+                                                    int main()<br>
+                                                    {
+                                                        <br>
+                                                    int i=10;<br>
+                                                    if( i &lt; 20) // si la condition est vrai<br>
+                                                        {<br>
+                                                        int n=100; // Variable locale déclarée et initialisée<br>
+                                                        } // fin de la fonction if<br>
+                                                        cout &lt;&lt; n; // Erreur de compilation, n non disponible ici<br>
+                                                            }<br>
+                                                
                                     </div>
                                     </p>
                                     <br>
@@ -277,19 +298,19 @@ require_once "function.php";
                                 </div>
                                 <!-- Contenu de l'onglet Les Tableaux -->
                                 <div class=" tab-pane fade" id="o3" role="tabpanel" aria-labelledby="onglet3">
-                                En cours de création !
+                                    En cours de création !
                                 </div>
                                 <!-- Contenu de l'onglet Les Structures -->
                                 <div class="tab-pane fade" id="o4" role="tabpanel" aria-labelledby="onglet4">
-                                En cours de création !
+                                    En cours de création !
                                 </div>
-                                <!-- Contenu de l'onglet Les Pointeurs -->
+                                <!-- Contenu de l'onglet Les Pointeurinfs -->
                                 <div class="tab-pane fade" id="o5" role="tabpanel" aria-labelledby="onglet5">
-                                En cours de création !
+                                    En cours de création !
                                 </div>
                                 <!-- Contenu de l'onglet Les Classes -->
                                 <div class="tab-pane fade" id="o6" role="tabpanel" aria-labelledby="onglet6">
-                                En cours de création !
+                                    En cours de création !
                                 </div>
 
                             </div>
